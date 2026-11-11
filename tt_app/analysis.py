@@ -11,14 +11,17 @@ Aufbau
 
 from __future__ import annotations
 
+import json
 import math
 from datetime import date
 
 import pandas as pd
 import streamlit as st
 
+from tt_app import ai
 from tt_app import common as c
 from tt_app import explain as x
+from tt_app import sectors, storage
 from tt_app import style as s
 
 BENCHMARK = {"US": ("^GSPC", "S&P 500"), "DE": ("^GDAXI", "DAX")}
@@ -227,6 +230,33 @@ def render() -> None:
         f'<div class="tt-chg {s.tone(m["chg_1d"])}-t">{c.fmt_pct(m["chg_1d"])} heute</div>'
         f'<div>{"".join(s.pill(v, "muted") for v in meta)}{c.signal_pills(m["signal_keys"])}</div></div>')
 
+    # ---- Merken / Übungstrade ------------------------------------------------
+    settings = storage.get()["settings"]
+    default_loss = float(settings["depot_size"]) * float(settings["risk_pct"]) / 100
+    per_share_risk = last - m["stop"] if not nan(m["stop"]) else float("nan")
+    b1, b2, _ = st.columns([1, 1, 3])
+    if storage.on_watchlist(ticker):
+        if b1.button("✓ Auf der Merkliste", use_container_width=True, help="Klicken zum Entfernen"):
+            storage.remove_watch(ticker)
+            st.rerun()
+    elif b1.button("⭐ Merken", use_container_width=True, help="Auf die Merkliste setzen"):
+        storage.add_watch(ticker, name, last)
+        st.toast(f"{ticker} ist jetzt auf deiner Merkliste.", icon="⭐")
+        st.rerun()
+    with b2.popover("🧪 Übungstrade eröffnen", use_container_width=True,
+                    disabled=nan(per_share_risk) or per_share_risk <= 0):
+        st.markdown("Mit **Spielgeld** ausprobieren – ohne echtes Risiko.")
+        suggested = max(1, int(default_loss // per_share_risk)) if not nan(per_share_risk) and per_share_risk > 0 else 1
+        shares = st.number_input("Wie viele Aktien?", min_value=1, value=suggested, step=1,
+                                 help=f"Vorschlag: so viele, dass du am Ausstieg höchstens "
+                                      f"{c.fmt_num(default_loss, 0)} verlierst (siehe Mein Bereich → Einstellungen).")
+        st.caption(f"Kauf zu {c.fmt_num(last)} {currency} · Ausstieg {c.fmt_num(m['stop'])} · "
+                   f"Ziel {c.fmt_num(m['target'])} · Einsatz ≈ {c.fmt_num(shares * last, 0)} {currency}")
+        if st.button("Übungstrade starten", type="primary", use_container_width=True):
+            storage.open_trade(ticker, name, currency, last, int(shares), m["stop"], m["target"],
+                               idea=m["signals"])
+            st.toast(f"Übungstrade {ticker} eröffnet – zu finden unter „Mein Bereich“.", icon="🧪")
+
     # ---- Auf einen Blick + 4 Schritte ---------------------------------------
     checks = [
         market_check(regime),
@@ -250,6 +280,23 @@ def render() -> None:
               "Ist jetzt ein guter Moment?"]
     s.html_block('<div class="tt-steps">' + "".join(
         step_tile(i + 1, t, ch) for i, (t, ch) in enumerate(zip(titles, checks))) + "</div>")
+
+    # ---- KI-Zusammenfassung ------------------------------------------------
+    with st.expander("🤖 KI-Zusammenfassung: Was ist bei dieser Aktie los?"):
+        if not ai.available():
+            st.caption("Noch nicht eingerichtet: Dafür wird ein Anthropic-API-Schlüssel in den "
+                       "Streamlit-Secrets gebraucht (siehe Lern-Ecke → Einrichtung).")
+        else:
+            key = f"ai_{ticker}"
+            if st.button("Zusammenfassung erstellen (kostet ein paar Cent)", key=f"btn_{key}"):
+                with st.spinner("Die KI liest Daten und Nachrichten …"):
+                    st.session_state[key] = ai.summarize(
+                        ticker, ai.facts(name, info, m, checks, head, currency, last),
+                        json.dumps(c.news(ticker), ensure_ascii=False, default=str))
+            if st.session_state.get(key):
+                st.markdown(st.session_state[key])
+                st.caption("Erstellt von Claude (Anthropic) aus den Daten dieser Seite. KI kann sich "
+                           "irren – wichtige Punkte bitte selbst prüfen.")
 
     # ---- Kursverlauf -------------------------------------------------------
     s.section("📈 Kursverlauf")
@@ -278,7 +325,7 @@ def render() -> None:
             st.markdown("**Wie viel kann ich kaufen?**")
             loss = st.number_input(
                 f"Wie viel Geld ({currency}) wärst du bereit zu verlieren, falls die Idee nicht aufgeht?",
-                min_value=0.0, value=100.0, step=50.0,
+                min_value=0.0, value=float(round(default_loss)), step=50.0,
                 help="Faustregel: pro Idee höchstens 1–2 % deines gesamten Börsengelds riskieren.")
             per_share = last - m["stop"] if not nan(m["stop"]) else float("nan")
             if not nan(per_share) and per_share > 0 and loss > 0:
@@ -311,6 +358,12 @@ def render() -> None:
                 notes.append(("down", f"In {days} Tagen ({pd.Timestamp(earnings):%d.%m.}) legt das "
                                       "Unternehmen Quartalszahlen vor. Dann springt der Kurs oft stark – "
                                       "in beide Richtungen."))
+        sec = sectors.sector_for(info.get("sector"))
+        if sec:
+            label, tone_ = sectors.sector_verdict(sec)
+            notes.append(({"up": "up", "down": "down"}.get(tone_, "warn"),
+                          f"Die Branche ({sec['name']}) {label}: {c.fmt_pct(sec['m3'])} in 3 Monaten, "
+                          f"{'besser' if sec['vs_market'] > 0 else 'schlechter'} als der Gesamtmarkt."))
         story = x.idea_story({**m, "rs_rank": rs_rank, "currency": currency, "chg_1d": m["chg_1d"]})
         notes += [("warn", w) for w in story["watch"]]
         notes += [("down", w) for w in story["caution"]]

@@ -24,10 +24,10 @@ jobs:
 
     steps:
       - name: Repo auschecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Python einrichten
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.11"
           cache: pip
@@ -38,7 +38,7 @@ jobs:
       # Kursdaten aus dem letzten Lauf wiederherstellen. Der Schlüssel ist pro
       # Lauf neu, restore-keys holt den jüngsten vorhandenen Cache.
       - name: Kurs-Cache laden
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: data/prices
           key: prices-${{ github.run_id }}
@@ -51,7 +51,7 @@ jobs:
       # Auch bei einem Fehler speichern, damit bereits geladene Kurse nicht verloren gehen
       - name: Kurs-Cache speichern
         if: always() && hashFiles('data/prices/*.parquet') != ''
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: data/prices
           key: prices-${{ github.run_id }}
@@ -69,3 +69,11 @@ jobs:
           # falls inzwischen Code-Änderungen gepusht wurden, darauf aufsetzen
           git pull --rebase origin main
           git push
+
+      # Telegram-Nachricht (nur wenn die Secrets eingerichtet sind, sonst wird übersprungen)
+      - name: Benachrichtigungen senden
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TRADETALK_TOKEN: ${{ secrets.TRADETALK_TOKEN }}
+        run: python src/notify.py

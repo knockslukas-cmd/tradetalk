@@ -8,6 +8,7 @@ import streamlit as st
 
 from tt_app import common as c
 from tt_app import explain as x
+from tt_app import sectors
 from tt_app import style as s
 
 IDEA_KINDS = {"Alle Ideen": None, "Neues Jahreshoch": "breakout_52w",
@@ -264,6 +265,56 @@ def anomalies_section(scan: pd.DataFrame) -> None:
         pick_table(df, warn, "t_warn")
 
 
+def _search_picked() -> None:
+    t = st.session_state.get("dash_search")
+    if t:
+        st.session_state["_open_from_search"] = t
+
+
+def _search_typed() -> None:
+    t = st.session_state.get("dash_search_free", "").strip().upper()
+    if t:
+        st.session_state["_open_from_search"] = t
+
+
+def search_bar(df: pd.DataFrame) -> None:
+    """Suchleiste: Aktie eintippen -> ausführliche Prüfung öffnen."""
+    if st.session_state.get("_open_from_search"):
+        ticker = st.session_state.pop("_open_from_search")
+        st.session_state["dash_search"] = None
+        st.session_state["dash_search_free"] = ""
+        c.open_analysis(ticker)
+    labels = {t: f"{t} – {n}" for t, n in zip(df["ticker"], df["name"])} if len(df) else {}
+    left, right = st.columns([3, 1])
+    left.selectbox("🔍 Aktie suchen", list(labels), index=None, key="dash_search",
+                   format_func=lambda t: labels.get(t, t), on_change=_search_picked,
+                   placeholder="Name oder Kürzel eintippen, z. B. Apple, SAP, Rheinmetall …",
+                   label_visibility="collapsed")
+    right.text_input("Anderes Kürzel", key="dash_search_free", on_change=_search_typed,
+                     placeholder="… oder Kürzel, z. B. TSLA", label_visibility="collapsed",
+                     help="Für Aktien, die nicht im Scan sind. Deutsche Aktien enden auf .DE")
+    st.caption("Tippe eine Aktie ein – die App prüft sie für dich: Trend, Stärke, Zeitpunkt, "
+               "ein möglicher Plan und auf Wunsch eine KI-Zusammenfassung.")
+
+
+def data_warnings(stored: dict) -> None:
+    """Hinweise, wenn die Daten alt sind oder Yahoo viele Aktien nicht geliefert hat."""
+    if not stored:
+        return
+    age = pd.Timestamp.now(tz="UTC") - pd.Timestamp(stored["generated_at"])
+    workdays = len(pd.bdate_range(pd.Timestamp(stored["generated_at"]).tz_convert(None).normalize(),
+                                  pd.Timestamp.now().normalize())) - 1
+    if workdays >= 2:
+        st.warning(f"Die Daten sind {age.days} Tage alt – die automatische Aktualisierung hat "
+                   "wohl nicht geklappt. Drücke links auf **Markt jetzt aktualisieren** oder schau "
+                   "auf GitHub unter Actions nach.", icon="⏰")
+    failed, total = stored.get("failed_count", 0), stored.get("universe_count", 0) or 1
+    if failed / total > 0.05:
+        st.warning(f"Yahoo Finance hat beim letzten Lauf für {failed} von {total} Aktien keine Kurse "
+                   "geliefert. Einige Ideen und Zahlen können fehlen. Meist ist das beim nächsten "
+                   "Lauf wieder in Ordnung.", icon="📡")
+
+
 def render() -> None:
     df = c.scan()
     stored = c.stored_regime()
@@ -272,8 +323,11 @@ def render() -> None:
         sub = (f"Daten vom {c.berlin(stored['generated_at'])} · "
                f"{stored.get('liquid_count', len(df))} Aktien geprüft")
     s.page_head('<span class="tt-logo">tradetalk</span>', sub)
+    search_bar(df)
+    data_warnings(stored)
     report_section()
     breadth_section(stored)
+    sectors.render_section()
     if df.empty:
         st.error("Noch keine Scan-Ergebnisse vorhanden.")
         return

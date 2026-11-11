@@ -6,3 +6,5 @@ pyarrow>=14
 tqdm>=4.66
 streamlit>=1.40
 plotly>=5.20
+# KI-Zusammenfassung (braucht Python >= 3.10; lokal mit 3.9 wird sie einfach ausgeblendet)
+anthropic>=1.0,<2; python_version >= "3.10"

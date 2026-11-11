@@ -30,6 +30,7 @@ import fetch  # noqa: E402
 import filters  # noqa: E402
 import market_regime  # noqa: E402
 import signals  # noqa: E402
+import tracking  # noqa: E402
 import universe  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -149,6 +150,20 @@ def main() -> int:
     scan = build_scan(cfg, passed)
     scan.to_parquet(results_dir / "scan_latest.parquet", index=False)
     log.info("%d von %d Aktien bestehen, fertig in %.0fs", len(passed), len(result), time.time() - t)
+
+    # Erfolgskontrolle: heutige Ideen festhalten und alle bisherigen auswerten
+    try:
+        day = scan["last_date"].max().strftime("%Y-%m-%d")
+        ideas_log = tracking.log_ideas(results_dir / "ideas_log.csv",
+                                       tracking.ideas_from_scan(scan, day))
+        prices_dir = ROOT / cfg["paths"]["prices_dir"]
+        ev = tracking.evaluate(ideas_log, lambda tk: filters.price_path(prices_dir, tk))
+        if len(ev):
+            ev.drop(columns=["signals"], errors="ignore").to_parquet(
+                results_dir / "ideas_eval.parquet", index=False)
+        log.info("Erfolgskontrolle: %d Ideen im Protokoll", len(ideas_log))
+    except Exception as exc:
+        log.error("Erfolgskontrolle fehlgeschlagen: %s", exc)
 
     t = step("4/4 Marktumfeld")
     regime = market_regime.compute_regime(cfg)

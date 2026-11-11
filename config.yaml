@@ -15,6 +15,25 @@ filters:
   avg_volume_days: 20           # Zeitraum für den Durchschnitt
   max_stale_days: 7             # letzter Kurs höchstens so viele Kalendertage alt
 
+# Branchen-Übersicht: US-Branchen-ETFs als Maßstab
+sectors:
+  XLK: Technologie
+  SMH: Halbleiter (Chips)
+  XLF: Banken & Finanzen
+  XLV: Gesundheit
+  XLE: Energie
+  XLI: Industrie
+  XLY: Konsum (Luxus, Autos, Handel)
+  XLP: Basiskonsum (Lebensmittel, Haushalt)
+  XLB: Rohstoffe & Chemie
+  XLU: Versorger (Strom, Wasser)
+  XLRE: Immobilien
+  XLC: Kommunikation & Medien
+
+# Wichtige Termine für den Kalender (optional, bitte selbst pflegen)
+# Format:  - {date: "2026-12-09", title: "US-Notenbank (Fed) Zinsentscheid"}
+events: []
+
 # Marktumfeld
 market_regime:
   indices:
