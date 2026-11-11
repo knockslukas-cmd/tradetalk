@@ -31,16 +31,16 @@ import pandas as pd
 
 # Name, Art und Grundgewicht je Signal
 SIGNALS = {
-    "breakout_52w": ("Ausbruch 52W-Hoch", "setup", 3.0),
-    "pullback_sma50": ("Pullback an SMA50", "setup", 2.5),
-    "golden_cross": ("Golden Cross", "setup", 2.0),
-    "reclaim_sma200": ("Über SMA200 zurück", "setup", 1.5),
-    "oversold_trend": ("Überverkauft im Aufwärtstrend", "setup", 1.5),
-    "volume_spike": ("Volumen-Spike", "anomaly", 1.0),
-    "gap_up": ("Gap nach oben", "anomaly", 0.5),
-    "gap_down": ("Gap nach unten", "anomaly", 0.0),
-    "break_sma200": ("Bruch SMA200", "warning", 0.0),
-    "death_cross": ("Death Cross", "warning", 0.0),
+    "breakout_52w": ("Neues Jahreshoch", "setup", 3.0),
+    "pullback_sma50": ("Rücksetzer im Aufwärtstrend", "setup", 2.5),
+    "golden_cross": ("Trend dreht nach oben", "setup", 2.0),
+    "reclaim_sma200": ("Zurück im langfristigen Aufwärtstrend", "setup", 1.5),
+    "oversold_trend": ("Stark gefallen, Trend intakt", "setup", 1.5),
+    "volume_spike": ("Ungewöhnlich viel Handel", "anomaly", 1.0),
+    "gap_up": ("Kurssprung nach oben", "anomaly", 0.5),
+    "gap_down": ("Kurssprung nach unten", "anomaly", 0.0),
+    "break_sma200": ("Langfristiger Trend gebrochen", "warning", 0.0),
+    "death_cross": ("Trend dreht nach unten", "warning", 0.0),
 }
 
 SETUP_KEYS = [k for k, (_, kind, _) in SIGNALS.items() if kind == "setup"]
@@ -148,14 +148,21 @@ def analyze(df: pd.DataFrame) -> dict:
     if _crossed(sma50_s, sma200_s, 5, up=False):
         hits.append("death_cross")
 
-    # Orientierung für einen Stopp: 2 x ATR unter dem Schlusskurs
+    # Möglicher Plan: Ausstiegsmarke 2 x typische Tagesschwankung unter dem Kurs,
+    # Ziel am Jahreshoch (falls weit genug entfernt), sonst das Doppelte des Risikos.
     m["low_10d"] = low_10
     if not math.isnan(atr14):
         stop = last - 2 * atr14
+        risk = last - stop
+        target = high_52w if high_52w - last >= 2 * risk else last + 2 * risk
         m["stop"] = stop
-        m["risk_pct"] = (last - stop) / last * 100
+        m["risk_pct"] = risk / last * 100
+        m["target"] = target
+        m["target_pct"] = (target / last - 1) * 100
+        m["reward_risk"] = (target - last) / risk if risk > 0 else float("nan")
     else:
-        m["stop"] = m["risk_pct"] = float("nan")
+        m["stop"] = m["risk_pct"] = m["target"] = m["target_pct"] = float("nan")
+        m["reward_risk"] = float("nan")
 
     m["signal_keys"] = ",".join(hits)
     m["signals"] = ", ".join(label(k) for k in hits)
@@ -176,14 +183,39 @@ def add_scores(scan: pd.DataFrame) -> pd.DataFrame:
             + 0.3 * scan["perf_1m"].fillna(0))
     scan["rs_rank"] = perf.rank(pct=True) * 100
 
+    def num(x, default=float("nan")) -> float:
+        try:
+            x = float(x)
+        except (TypeError, ValueError):
+            return default
+        return default if math.isnan(x) else x
+
     def score(row) -> float:
         keys = [k for k in str(row["signal_keys"]).split(",") if k]
         base = sum(SIGNALS[k][2] for k in keys)
         if base == 0 or not row["has_setup"]:
             return 0.0
-        vol_bonus = min(row["vol_ratio"], 4) if not math.isnan(row["vol_ratio"]) else 0
-        penalty = 2 if row["has_warning"] else 0
+        vol_bonus = min(num(row["vol_ratio"], 0), 4)
+        penalty = 0.0
+        if row["has_warning"]:
+            penalty += 2
+        rsi_v, atr_v, rr = num(row["rsi14"], 50), num(row["atr_pct"], 3), num(row["reward_risk"], 2)
+        if rsi_v >= 80:
+            penalty += 3.0          # stark überhitzt: Einstieg jetzt ungünstig
+        elif rsi_v >= 75:
+            penalty += 1.5
+        if atr_v >= 8:
+            penalty += 1.5          # sehr wilde Schwankungen
+        if atr_v < 1:
+            penalty += 3.0          # kaum Bewegung (oft laufende Übernahme)
+        if row["rs_rank"] < 50:
+            penalty += 1.0          # läuft schlechter als die Hälfte aller Aktien
+        if rr < 1.5:
+            penalty += 1.0          # Chance im Verhältnis zum Risiko zu klein
         return round(base + row["rs_rank"] / 25 + vol_bonus / 2 - penalty, 2)
 
     scan["score"] = scan.apply(score, axis=1)
+    # 1–5 Sterne für die Anzeige (nur für Ideen mit Score > 0)
+    stars = pd.cut(scan["score"], bins=[-1e9, 0, 4, 5.5, 7, 8.5, 1e9], labels=[0, 1, 2, 3, 4, 5])
+    scan["stars"] = stars.astype(int)
     return scan

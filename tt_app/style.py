@@ -145,6 +145,51 @@ a.tt-card, a.tt-card:hover {{ text-decoration:none; color:inherit; }}
 .tt-news .tt-item {{ padding:.6rem 0; border-bottom:1px solid var(--border); }}
 .tt-news .tt-meta {{ color:var(--muted); font-size:.75rem; margin-top:.15rem; }}
 .tt-disclaimer {{ color:var(--muted); font-size:.75rem; margin-top:2rem; text-align:center; }}
+.tt-list .mid .tt-ic {{ background:rgba(245,165,36,.16); color:var(--warn); }}
+.tt-report li {{ color:#d5dbe6; font-size:.9rem; }}
+.tt-advice {{ margin-top:.9rem; background:rgba(45,212,163,.07); border:1px solid rgba(45,212,163,.25);
+  border-radius:12px; padding:.75rem 1rem; }}
+.tt-advice ul {{ margin:.35rem 0 0 1.1rem; padding:0; }}
+.tt-advice li {{ font-size:.9rem; margin:.15rem 0; }}
+
+/* Trade-Ideen */
+.tt-idea .tt-idea-title {{ color:var(--accent); font-size:.78rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.05em; margin-bottom:.15rem; }}
+.tt-idea .tt-tk {{ font-size:1.05rem; }}
+.tt-idea .tt-nm {{ font-weight:500; margin-left:.25rem; }}
+.tt-stars {{ color:var(--warn); letter-spacing:.12em; font-size:.95rem; margin-top:.35rem; }}
+.tt-idea .tt-list li {{ font-size:.82rem; padding:.35rem 0; }}
+.tt-plan {{ display:grid; grid-template-columns:repeat(4,1fr); gap:.4rem; margin-top:.6rem;
+  background:#0f141e; border:1px solid var(--border); border-radius:10px; padding:.55rem .6rem; }}
+.tt-plan div {{ min-width:0; }}
+.tt-plan span {{ display:block; color:var(--muted); font-size:.64rem; line-height:1.2; }}
+.tt-plan b {{ display:block; font-size:.9rem; font-variant-numeric:tabular-nums; margin-top:.15rem; }}
+.tt-plan em {{ display:block; font-style:normal; color:var(--muted); font-size:.68rem; }}
+.tt-cta {{ text-align:right; color:var(--accent); font-weight:700; font-size:.82rem; margin-top:.6rem; }}
+
+/* Analyse-Schritte */
+.tt-steps {{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.7rem; margin:.4rem 0 .2rem; }}
+@media (max-width: 900px) {{ .tt-steps {{ grid-template-columns:repeat(2,minmax(0,1fr)); }} }}
+.tt-step {{ background:var(--surface); border:1px solid var(--border); border-radius:14px;
+  padding:.8rem .9rem; border-top:3px solid var(--c); }}
+.tt-step .tt-n {{ color:var(--muted); font-size:.7rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:.06em; }}
+.tt-step .tt-h {{ font-weight:800; font-size:1rem; margin:.15rem 0 .3rem; color:var(--c); }}
+.tt-step .tt-p {{ font-size:.82rem; color:#c4cbd8; line-height:1.4; }}
+.tt-summary {{ border-radius:16px; padding:1.1rem 1.3rem; border:1px solid var(--border);
+  background:linear-gradient(90deg,var(--vbg),var(--surface) 75%); margin:.4rem 0 1rem; }}
+.tt-summary .tt-vt {{ font-size:1.6rem; font-weight:800; }}
+.tt-summary .tt-text {{ color:#d5dbe6; margin-top:.2rem; }}
+.tt-planbox {{ background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:1rem 1.2rem; }}
+.tt-planrow {{ display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.55rem 0;
+  border-bottom:1px solid var(--border); }}
+.tt-planrow:last-child {{ border-bottom:none; }}
+.tt-planrow .tt-l {{ font-weight:700; }}
+.tt-planrow .tt-d {{ color:var(--muted); font-size:.8rem; }}
+.tt-planrow .tt-r {{ text-align:right; font-weight:800; font-size:1.15rem; white-space:nowrap;
+  font-variant-numeric:tabular-nums; }}
+.tt-rr {{ display:flex; height:12px; border-radius:99px; overflow:hidden; margin:.6rem 0 .3rem; }}
+.tt-explain {{ color:#c4cbd8; font-size:.88rem; line-height:1.5; }}
 </style>
 """
 

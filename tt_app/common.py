@@ -249,7 +249,7 @@ def open_analysis(ticker: str) -> None:
 # Chart
 # --------------------------------------------------------------------------- #
 def price_chart(df: pd.DataFrame, months: int, stop: float | None = None,
-                height: int = 560) -> go.Figure:
+                height: int = 560, target: float | None = None) -> go.Figure:
     df = df.copy()
     df["SMA50"] = df["Close"].rolling(50).mean()
     df["SMA200"] = df["Close"].rolling(200).mean()
@@ -265,24 +265,28 @@ def price_chart(df: pd.DataFrame, months: int, stop: float | None = None,
         x=df.index, open=df["Open"], high=df["High"], low=df["Low"], close=df["Close"],
         name="Kurs", increasing=dict(line=dict(color=style.UP), fillcolor=style.UP),
         decreasing=dict(line=dict(color=style.DOWN), fillcolor=style.DOWN)), row=1, col=1)
-    fig.add_trace(go.Scatter(x=df.index, y=df["SMA50"], name="SMA50",
+    fig.add_trace(go.Scatter(x=df.index, y=df["SMA50"], name="Durchschnitt 50 Tage",
                              line=dict(width=1.6, color=style.INFO)), row=1, col=1)
-    fig.add_trace(go.Scatter(x=df.index, y=df["SMA200"], name="SMA200",
+    fig.add_trace(go.Scatter(x=df.index, y=df["SMA200"], name="Durchschnitt 200 Tage",
                              line=dict(width=1.6, color=style.WARN)), row=1, col=1)
     fig.add_hline(y=high_52w, line=dict(color="rgba(139,149,167,0.6)", dash="dot", width=1),
-                  annotation_text="52W-Hoch", annotation_position="top left",
+                  annotation_text="Jahreshoch", annotation_position="bottom left",
                   annotation_font_color=style.MUTED, row=1, col=1)
     if stop and not math.isnan(stop):
-        fig.add_hline(y=stop, line=dict(color="rgba(240,80,110,0.8)", dash="dash", width=1),
-                      annotation_text="Stopp (2×ATR)", annotation_position="bottom left",
+        fig.add_hline(y=stop, line=dict(color="rgba(240,80,110,0.85)", dash="dash", width=1.2),
+                      annotation_text="Ausstieg, falls falsch", annotation_position="bottom left",
                       annotation_font_color=style.DOWN, row=1, col=1)
+    if target and not math.isnan(target) and abs(target - high_52w) / high_52w > 0.005:
+        fig.add_hline(y=target, line=dict(color="rgba(38,208,124,0.85)", dash="dash", width=1.2),
+                      annotation_text="Mögliches Ziel", annotation_position="top left",
+                      annotation_font_color=style.UP, row=1, col=1)
     colors = ["rgba(38,208,124,0.45)" if c >= o else "rgba(240,80,110,0.45)"
               for o, c in zip(df["Open"], df["Close"])]
     fig.add_trace(go.Bar(x=df.index, y=df["Volume"], name="Volumen", marker_color=colors,
                          showlegend=False), row=2, col=1)
     fig.update_layout(
         height=height, xaxis_rangeslider_visible=False, hovermode="x unified",
-        margin=dict(l=0, r=0, t=8, b=0), paper_bgcolor="rgba(0,0,0,0)",
+        margin=dict(l=12, r=0, t=8, b=0), paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)", font=dict(color="#c4cbd8", size=12),
         legend=dict(orientation="h", y=1.04, x=0, bgcolor="rgba(0,0,0,0)"),
         hoverlabel=dict(bgcolor="#131925", bordercolor=style.BORDER))
