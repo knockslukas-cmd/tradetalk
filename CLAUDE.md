@@ -60,14 +60,17 @@
 - Mein Bereich, Termine, Erfolgskontrolle (Rückblick: Ø +0,5 %/Idee, 33 % Treffer), Lern-Ecke.
 
 ## 6. Bekannte Probleme / offen
-- Nutzer muss noch einrichten: Gist-Berechtigung am Token, Telegram-Secrets, Anthropic-Key.
+- Eingerichtet (11.11.2026): Gist-Speicher (Token hat Gists RW) und Anthropic-Key in Streamlit –
+  beides online getestet. Noch offen: Telegram-Secrets (optional).
 - KI-Zusammenfassung lokal nicht testbar (anthropic 1.x braucht Python ≥ 3.10, lokal 3.9).
 - Ideen nur knapp profitabel; Backtest ohne Börsenwetter-Filter, mit Survivorship-Bias.
 - 16:45-UTC-Lauf: US-Tagesvolumen unvollständig → Volumen-Signale unterschätzt.
 - Analyse rechnet live, Dashboard mit Scan-Stand → Abweichungen möglich (Hinweis wird angezeigt).
 - yfinance-News zeitweise gestört; onvista-Scraping kann bei Seitenumbau brechen.
 - Börsenkürzel „F“ in otherlisted.txt unbekannt (vermutlich NYSE Texas) → „Code F“.
-- GitHub-Token (fine-grained) läuft am **09.02.2027** ab; `gh` liegt auf dem Desktop, nicht angemeldet.
+- GitHub-Token (fine-grained) läuft am **09.02.2027** ab.
+- `gh` (Intel-Build) liegt unter `~/Desktop/gh_2.103.3_macOS_amd64/bin/gh`, angemeldet; als
+  Git-Credential-Helper nur in diesem Repo eingetragen (`gh auth setup-git` scheitert wegen Rosetta).
 - Markttermine (Fed/EZB) nicht hinterlegt – `events:` in config.yaml ist leer.
 
 ## 7. Nächste Schritte
@@ -83,4 +86,5 @@
 - Nutzer ist Einsteiger: Anleitungen Schritt für Schritt, Klickpfade konkret benennen.
 - Keine Tokens/Passwörter eingeben oder speichern; Secrets nur über GitHub/Streamlit-Secrets.
 - Python 3.9 lokal, 3.11 in CI/Streamlit – Code muss auf beiden laufen.
-- Push macht der Nutzer per GitHub Desktop (Fetch → Pull → Push), Bot committet `results/`.
+- Push: `git pull --rebase origin main && git push` (über gh-Credential-Helper) oder der Nutzer per
+  GitHub Desktop. Der Bot committet `results/` – vor dem Push immer erst pullen.
