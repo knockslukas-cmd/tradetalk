@@ -75,7 +75,7 @@ def update_panel() -> None:
     if not s:
         st.caption("Der Knopf ist noch nicht eingerichtet (GitHub-Token fehlt in den "
                    "Streamlit-Secrets).")
-        st.button("🔄 Markt jetzt aktualisieren", disabled=True, use_container_width=True)
+        st.button("🔄 Markt jetzt aktualisieren", disabled=True, width="stretch")
         return
 
     try:
@@ -85,7 +85,7 @@ def update_panel() -> None:
         st.caption("GitHub ist gerade nicht erreichbar.")
 
     running = bool(run and run["status"] != "completed")
-    if st.button("🔄 Markt jetzt aktualisieren", disabled=running, use_container_width=True,
+    if st.button("🔄 Markt jetzt aktualisieren", disabled=running, width="stretch",
                  help="Lädt neue Kurse, berechnet Signale und Marktlage neu (ca. 3–8 Minuten)."):
         ok, msg = trigger(s["repo"], s["workflow"], s["token"])
         (st.success if ok else st.error)(msg)
@@ -103,7 +103,7 @@ def update_panel() -> None:
         started = st.session_state.get("update_started")
         if started and pd.Timestamp(run["updated_at"]) > pd.Timestamp(started):
             st.success("Neue Daten sind da. Die App lädt sie in 1–2 Minuten automatisch.")
-            if st.button("Jetzt neu laden", use_container_width=True):
+            if st.button("Jetzt neu laden", width="stretch"):
                 st.session_state.pop("update_started", None)
                 st.cache_data.clear()
                 st.rerun(scope="app")

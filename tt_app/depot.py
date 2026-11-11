@@ -56,7 +56,7 @@ def watchlist_tab(scan: pd.DataFrame) -> None:
     df = pd.DataFrame(rows)
     st.caption(f"{len(df)} Aktien · Kurse live · Zeile anklicken für die Analyse")
     event = st.dataframe(
-        df, hide_index=True, use_container_width=True, on_select="rerun",
+        df, hide_index=True, width="stretch", on_select="rerun",
         selection_mode="single-row", key="wl_table",
         column_config={
             "ticker": st.column_config.TextColumn("Kürzel"),
@@ -148,11 +148,11 @@ def depot_tab() -> None:
         with col2:
             reason = ("Ausstieg erreicht" if not nan(price) and price <= t["stop"]
                       else "Ziel erreicht" if not nan(price) and price >= t["target"] else "von Hand")
-            if st.button("Verkaufen", key=f"close_{t['id']}", use_container_width=True,
+            if st.button("Verkaufen", key=f"close_{t['id']}", width="stretch",
                          disabled=nan(price), help="Zum aktuellen Kurs schließen"):
                 storage.close_trade(t["id"], price, reason)
                 st.rerun()
-            if st.button("Analyse", key=f"an_{t['id']}", use_container_width=True):
+            if st.button("Analyse", key=f"an_{t['id']}", width="stretch"):
                 c.open_analysis(t["ticker"])
 
     if closed:
@@ -165,7 +165,7 @@ def depot_tab() -> None:
             "pnl": (t["exit"] - t["entry"]) * t["shares"],
             "pct": (t["exit"] / t["entry"] - 1) * 100, "reason": t["reason"],
         } for t in closed]).sort_values("closed", ascending=False)
-        st.dataframe(df, hide_index=True, use_container_width=True, column_config={
+        st.dataframe(df, hide_index=True, width="stretch", column_config={
             "ticker": "Kürzel", "name": st.column_config.TextColumn("Name", width="medium"),
             "opened": st.column_config.DateColumn("Gekauft", format="DD.MM.YYYY"),
             "closed": st.column_config.DateColumn("Verkauft", format="DD.MM.YYYY"),
@@ -224,13 +224,11 @@ def settings_tab() -> None:
 
 
 def render() -> None:
-    s.page_head('<span class="tt-logo">tradetalk</span> Mein Bereich',
-                "Merkliste · Übungsdepot · Einstellungen")
+    s.page_head('<span class="tt-logo">tradetalk</span> Mein Bereich', "Merkliste · Einstellungen")
     storage_banner()
-    tabs = st.tabs(["⭐ Merkliste", "🧪 Übungsdepot", "⚙️ Einstellungen"])
+    st.caption("Dein Übungsdepot findest du jetzt links unter **💼 Übungstrading**.")
+    tabs = st.tabs(["⭐ Merkliste", "⚙️ Einstellungen"])
     with tabs[0]:
         watchlist_tab(c.scan())
     with tabs[1]:
-        depot_tab()
-    with tabs[2]:
         settings_tab()

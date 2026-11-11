@@ -82,7 +82,7 @@ def breakdown(ev: pd.DataFrame) -> None:
             fig.update_layout(height=260, margin=dict(l=0, r=0, t=20, b=0),
                               paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                               yaxis=dict(title="Ø Ergebnis %", gridcolor="#1a2130"))
-            st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(fig, config={"displayModeBar": False})
             st.caption("Ø Ergebnis pro Idee nach Sternen. Steigt die Kurve von links nach rechts, "
                        "sind die Sterne ein guter Hinweis.")
     with b:
@@ -91,7 +91,7 @@ def breakdown(ev: pd.DataFrame) -> None:
             view = by_kind.assign(art=by_kind["kind"].map(KIND_NAMES)).sort_values("avg_result",
                                                                                 ascending=False)
             st.dataframe(view[["art", "anzahl", "trefferquote", "avg_result", "avg_days"]],
-                         hide_index=True, use_container_width=True, column_config={
+                         hide_index=True, width="stretch", column_config={
                              "art": st.column_config.TextColumn("Art der Idee", width="medium"),
                              "anzahl": st.column_config.NumberColumn("Anzahl", format="%d"),
                              "trefferquote": st.column_config.NumberColumn("mit Gewinn %", format="%.0f"),
@@ -111,7 +111,7 @@ def monthly(ev: pd.DataFrame) -> None:
                            marker_color=[s.UP if v > 0 else s.DOWN for v in m["result_pct"]]))
     fig.update_layout(height=240, margin=dict(l=0, r=0, t=10, b=0), paper_bgcolor="rgba(0,0,0,0)",
                       plot_bgcolor="rgba(0,0,0,0)", yaxis=dict(title="Ø Ergebnis %", gridcolor="#1a2130"))
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(fig, config={"displayModeBar": False})
     st.caption("Ø Ergebnis der Ideen je Monat (nach Datum der Idee). In schwachen Börsenphasen "
                "funktionieren Kauf-Ideen meist deutlich schlechter – deshalb ist das Börsenwetter wichtig.")
 
@@ -121,7 +121,7 @@ def recent(ev: pd.DataFrame) -> None:
     view = ev.sort_values(["date", "score"], ascending=[False, False]).head(200).copy()
     view["art"] = view["kind"].map(KIND_NAMES)
     st.dataframe(view[["date", "ticker", "name", "art", "stars", "entry", "outcome", "result_pct", "days"]],
-                 hide_index=True, use_container_width=True, height=420, column_config={
+                 hide_index=True, width="stretch", height=420, column_config={
                      "date": st.column_config.TextColumn("Datum"),
                      "ticker": st.column_config.TextColumn("Kürzel"),
                      "name": st.column_config.TextColumn("Name", width="medium"),

@@ -58,18 +58,19 @@ def load_userdata(token: str | None) -> dict:
 def trade_alerts(trades: list[dict], prices_dir: Path) -> list[str]:
     out = []
     for t in trades:
-        if t.get("status") != "open":
+        if t.get("status", "open") != "open" or not (t.get("stop") or t.get("target")):
             continue
         path = filters.price_path(prices_dir, t["ticker"])
         if not path.exists():
             continue
         bar = pd.read_parquet(path).dropna(subset=["Close"]).iloc[-1]
-        if bar["Low"] <= t["stop"]:
+        if t.get("stop") and bar["Low"] <= t["stop"]:
             out.append(f"🔴 <b>{t['ticker']}</b>: Ausstiegsmarke {fmt(t['stop'])} erreicht "
-                       f"(Kurs {fmt(bar['Close'])}). Die Idee hat nicht funktioniert – im Übungsdepot verkaufen.")
-        elif bar["High"] >= t["target"]:
+                       f"(Kurs {fmt(bar['Close'])}). Die App verkauft die Position beim nächsten Öffnen "
+                       "des Übungstradings automatisch.")
+        elif t.get("target") and bar["High"] >= t["target"]:
             out.append(f"🟢 <b>{t['ticker']}</b>: Ziel {fmt(t['target'])} erreicht "
-                       f"(Kurs {fmt(bar['Close'])}). Gewinn mitnehmen oder Ausstieg nachziehen.")
+                       f"(Kurs {fmt(bar['Close'])}). Die App verkauft beim nächsten Öffnen automatisch.")
     return out
 
 
@@ -123,7 +124,8 @@ def main() -> int:
     evening = datetime.now(timezone.utc).hour >= 21
 
     parts = []
-    trades = trade_alerts(user.get("trades", []), ROOT / cfg["paths"]["prices_dir"])
+    positions = list(((user.get("paper") or {}).get("positions") or {}).values())
+    trades = trade_alerts(positions, ROOT / cfg["paths"]["prices_dir"])
     if trades:
         parts.append("<b>Dein Übungsdepot</b>\n" + "\n".join(trades))
     watch = watch_alerts(user.get("watchlist", []), scan)

@@ -95,8 +95,8 @@ def render() -> None:
     left.caption(f"{len(view)} von {len(df)} Aktien · Spaltenkopf anklicken zum Sortieren · "
                  "Zeile anklicken für die Analyse")
     right.download_button("⬇️ Als CSV", view.to_csv(index=False).encode("utf-8"),
-                          "tradetalk_scan.csv", "text/csv", use_container_width=True)
-    event = st.dataframe(view, column_config=COLUMNS, hide_index=True, use_container_width=True,
+                          "tradetalk_scan.csv", "text/csv", width="stretch")
+    event = st.dataframe(view, column_config=COLUMNS, hide_index=True, width="stretch",
                          height=640, on_select="rerun", selection_mode="single-row",
                          key="scan_table")
     rows = event.selection.rows if event and event.selection else []

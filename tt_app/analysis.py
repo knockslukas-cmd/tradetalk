@@ -236,26 +236,22 @@ def render() -> None:
     per_share_risk = last - m["stop"] if not nan(m["stop"]) else float("nan")
     b1, b2, _ = st.columns([1, 1, 3])
     if storage.on_watchlist(ticker):
-        if b1.button("✓ Auf der Merkliste", use_container_width=True, help="Klicken zum Entfernen"):
+        if b1.button("✓ Auf der Merkliste", width="stretch", help="Klicken zum Entfernen"):
             storage.remove_watch(ticker)
             st.rerun()
-    elif b1.button("⭐ Merken", use_container_width=True, help="Auf die Merkliste setzen"):
+    elif b1.button("⭐ Merken", width="stretch", help="Auf die Merkliste setzen"):
         storage.add_watch(ticker, name, last)
         st.toast(f"{ticker} ist jetzt auf deiner Merkliste.", icon="⭐")
         st.rerun()
-    with b2.popover("🧪 Übungstrade eröffnen", use_container_width=True,
-                    disabled=nan(per_share_risk) or per_share_risk <= 0):
-        st.markdown("Mit **Spielgeld** ausprobieren – ohne echtes Risiko.")
-        suggested = max(1, int(default_loss // per_share_risk)) if not nan(per_share_risk) and per_share_risk > 0 else 1
-        shares = st.number_input("Wie viele Aktien?", min_value=1, value=suggested, step=1,
-                                 help=f"Vorschlag: so viele, dass du am Ausstieg höchstens "
-                                      f"{c.fmt_num(default_loss, 0)} verlierst (siehe Mein Bereich → Einstellungen).")
-        st.caption(f"Kauf zu {c.fmt_num(last)} {currency} · Ausstieg {c.fmt_num(m['stop'])} · "
-                   f"Ziel {c.fmt_num(m['target'])} · Einsatz ≈ {c.fmt_num(shares * last, 0)} {currency}")
-        if st.button("Übungstrade starten", type="primary", use_container_width=True):
-            storage.open_trade(ticker, name, currency, last, int(shares), m["stop"], m["target"],
-                               idea=m["signals"])
-            st.toast(f"Übungstrade {ticker} eröffnet – zu finden unter „Mein Bereich“.", icon="🧪")
+    if b2.button("🛒 Im Übungsdepot handeln", width="stretch",
+                 help="Mit Spielgeld kaufen – Ausstieg und Ziel aus dieser Analyse werden übernommen."):
+        st.session_state["trade_ticker"] = ticker
+        st.session_state["trade_side"] = "Kaufen"
+        st.session_state["trade_plan"] = {"stop": None if nan(m["stop"]) else m["stop"],
+                                          "target": None if nan(m["target"]) else m["target"],
+                                          "idea": m["signals"]}
+        st.session_state["_goto_view"] = "🛒 Handeln"
+        st.switch_page(c.PAGES["trading"])
 
     # ---- Auf einen Blick + 4 Schritte ---------------------------------------
     checks = [
@@ -303,8 +299,7 @@ def render() -> None:
     months = st.segmented_control("Zeitraum", [3, 6, 12, 24], default=12,
                                   format_func=lambda v: f"{v} Monate",
                                   label_visibility="collapsed", key="chart_months") or 12
-    st.plotly_chart(c.price_chart(prices, months, stop=m["stop"], target=m["target"], height=520),
-                    use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(c.price_chart(prices, months, stop=m["stop"], target=m["target"], height=520), config={"displayModeBar": False})
     st.caption("So liest du den Chart: Jede Kerze ist ein Tag – grün = Kurs gestiegen, rot = gefallen. "
                "Blaue Linie = Durchschnitt der letzten 50 Tage, orange = der letzten 200 Tage. Liegt der "
                "Kurs über beiden Linien, ist die Aktie im Aufwärtstrend. Rot gestrichelt = Ausstieg, "

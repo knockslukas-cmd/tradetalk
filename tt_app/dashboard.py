@@ -134,7 +134,7 @@ def breadth_section(stored: dict) -> None:
                               yaxis=dict(title="Punkte", gridcolor="#1a2130"),
                               yaxis2=dict(title="%", overlaying="y", side="right", range=[0, 100]),
                               legend=dict(orientation="h", y=1.15))
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig)
 
 
 # --------------------------------------------------------------------------- #
@@ -215,7 +215,7 @@ def pick_table(df: pd.DataFrame, columns: dict, key: str) -> None:
         st.caption("Heute nichts Auffälliges.")
         return
     view = df[list(columns)].reset_index(drop=True)
-    event = st.dataframe(view, column_config=columns, hide_index=True, use_container_width=True,
+    event = st.dataframe(view, column_config=columns, hide_index=True, width="stretch",
                          height=min(36 * (len(view) + 1) + 3, 400), on_select="rerun",
                          selection_mode="single-row", key=key)
     rows = event.selection.rows if event and event.selection else []

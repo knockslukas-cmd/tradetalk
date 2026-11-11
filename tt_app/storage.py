@@ -24,6 +24,7 @@ DEFAULT = {
     "watchlist": [],
     "trades": [],
     "settings": {"depot_size": 10000.0, "risk_pct": 1.0},
+    "paper": None,   # Übungstrading-Depot (tt_app/paper.py)
 }
 
 

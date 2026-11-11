@@ -21,8 +21,10 @@
 - `src/market_regime.py` Börsenwetter (S&P 500, Nasdaq, DAX vs. SMA50/200 + VIX → Punkte).
 - `src/tracking.py` Ideen-Protokoll + Auswertung; `src/backtest.py` Rückblick (nur lokal, einmalig).
 - `src/notify.py` Telegram-Nachrichten nach dem Lauf (nur wenn Secrets gesetzt).
-- `app.py` Streamlit-Navigation; `tt_app/`: `dashboard`, `analysis`, `scanner`, `depot` (Merkliste,
-  Übungsdepot, Einstellungen), `calendar_page`, `performance`, `learn`, `explain` (Texte in
+- `app.py` Streamlit-Navigation; `tt_app/`: `dashboard`, `analysis`, `scanner`, `trading` +
+  `paper` (Übungstrading: 50.000 € Spielgeld, 1 € Gebühr, Bruchstücke, Orders warten bei
+  geschlossener Börse, Auto-Verkauf bei Ausstieg/Ziel), `depot` (Merkliste, Einstellungen),
+  `calendar_page`, `performance`, `learn`, `explain` (Texte in
   Alltagssprache), `style` (CSS/HTML-Bausteine), `common` (Daten/Charts), `storage` (Gist),
   `sectors`, `updater` (Aktualisieren-Knopf → GitHub API), `ai` (Claude-Zusammenfassung).
 - `results/`: `scan_latest.parquet`, `market_regime.json`, `regime_history.csv`, `ideas_log.csv`,
@@ -57,7 +59,10 @@
 - Dashboard: Suchleiste, Börsenwetter-Bericht, Marktbreite, Branchen, Trade-Ideen-Karten, Auffälligkeiten.
 - Aktienanalyse: Auf einen Blick, 4 Prüfschritte, Chart, „Dein möglicher Plan“ + Rechner, Termine,
   Nachrichten, Unternehmen, Merken, Übungstrade, KI-Zusammenfassung.
-- Mein Bereich, Termine, Erfolgskontrolle (Rückblick: Ø +0,5 %/Idee, 33 % Treffer), Lern-Ecke.
+- Übungstrading (Depot, Handeln, Aktivität, Ideen-Check), Mein Bereich, Termine,
+  Erfolgskontrolle (Rückblick: Ø +0,5 %/Idee, 33 % Treffer), Lern-Ecke.
+- Testen ohne Browser: `streamlit.testing.v1.AppTest` (Funktions-Seiten nicht per switch_page).
+- Streamlit: `width="stretch"` statt `use_container_width` (bei plotly_chart weglassen).
 
 ## 6. Bekannte Probleme / offen
 - Eingerichtet (11.11.2026): Gist-Speicher (Token hat Gists RW) und Anthropic-Key in Streamlit –
