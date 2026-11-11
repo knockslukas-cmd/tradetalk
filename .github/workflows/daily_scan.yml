@@ -2,9 +2,12 @@ name: Daily scan
 
 on:
   schedule:
+    # Mo–Fr um 16:45 UTC (nach Xetra-Schluss, US-Börse läuft noch)
+    - cron: "45 16 * * 1-5"
     # Mo–Fr um 22:30 UTC (nach US-Börsenschluss)
     - cron: "30 22 * * 1-5"
-  # erlaubt einen manuellen Start unter "Actions" -> "Daily scan" -> "Run workflow"
+  # manueller Start: unter "Actions" -> "Daily scan" -> "Run workflow"
+  # oder über den Knopf "Markt jetzt aktualisieren" in der App
   workflow_dispatch:
 
 permissions:
@@ -62,5 +65,7 @@ jobs:
             echo "Keine Änderungen in results/"
             exit 0
           fi
-          git commit -m "Daily scan $(date -u +%Y-%m-%d)"
+          git commit -m "Scan $(date -u +'%Y-%m-%d %H:%M') UTC"
+          # falls inzwischen Code-Änderungen gepusht wurden, darauf aufsetzen
+          git pull --rebase origin main
           git push
