@@ -6,6 +6,7 @@ import pandas as pd
 import streamlit as st
 
 from tt_app import common as c
+from tt_app import style as s
 from tt_app.signals_ui import SIGNAL_OPTIONS
 
 COLUMNS = {
@@ -69,7 +70,8 @@ def sidebar_filters(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def render() -> None:
-    st.title("🔎 Scanner")
+    s.page_head('<span class="tt-logo">tradetalk</span> Scanner',
+                "Alle liquiden Aktien · filtern in der Seitenleiste")
     df = c.scan()
     if df.empty:
         st.error("Noch keine Scan-Ergebnisse vorhanden.")
@@ -90,4 +92,4 @@ def render() -> None:
     rows = event.selection.rows if event and event.selection else []
     if rows:
         c.open_analysis(view.iloc[rows[0]]["ticker"])
-    st.caption(c.DISCLAIMER)
+    s.html_block(f'<div class="tt-disclaimer">{s.esc(c.DISCLAIMER)}</div>')

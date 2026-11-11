@@ -1,0 +1,25 @@
+# Erscheinungsbild der tradetalk-App
+[theme]
+base = "dark"
+primaryColor = "#2dd4a3"
+backgroundColor = "#0b0e14"
+secondaryBackgroundColor = "#131925"
+textColor = "#e6eaf2"
+linkColor = "#5b9cf6"
+borderColor = "#222a38"
+showWidgetBorder = true
+baseRadius = "10px"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+headingFontWeights = [800, 700, 700, 600, 600, 600]
+chartCategoricalColors = ["#2dd4a3", "#5b9cf6", "#f5a524", "#f0506e", "#a78bfa", "#8b95a7"]
+
+[theme.sidebar]
+backgroundColor = "#0f131c"
+secondaryBackgroundColor = "#161d2a"
+borderColor = "#1c2330"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

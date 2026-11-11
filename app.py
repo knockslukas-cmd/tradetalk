@@ -14,7 +14,9 @@ import streamlit as st
 
 st.set_page_config(page_title="tradetalk", page_icon="📈", layout="wide")
 
-from tt_app import analysis, common, dashboard, scanner, updater  # noqa: E402
+from tt_app import analysis, common, dashboard, scanner, style, updater  # noqa: E402
+
+style.inject()
 
 pages = {
     "dashboard": st.Page(dashboard.render, title="Dashboard", icon="📊", url_path="dashboard",

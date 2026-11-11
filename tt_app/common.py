@@ -107,6 +107,25 @@ def has_signals(df: pd.DataFrame) -> bool:
     return bool(len(df)) and "rsi14" in df.columns
 
 
+@st.cache_data(ttl=900, show_spinner=False)
+def closes(tickers: tuple[str, ...], period: str = "3mo") -> dict[str, list[float]]:
+    """Schlusskurse mehrerer Ticker in einem Aufruf (für Sparklines)."""
+    if not tickers:
+        return {}
+    try:
+        df = yf.download(list(tickers), period=period, group_by="ticker", auto_adjust=False,
+                         progress=False, threads=True, multi_level_index=True)
+    except Exception:
+        return {}
+    out = {}
+    for t in tickers:
+        if df is not None and t in df.columns.get_level_values(0):
+            s = df[t]["Close"].dropna()
+            if len(s):
+                out[t] = s.tolist()
+    return out
+
+
 # --------------------------------------------------------------------------- #
 # Live-Kurse und Recherche
 # --------------------------------------------------------------------------- #
@@ -202,6 +221,18 @@ def signal_badges(keys: str) -> str:
     return " ".join(parts)
 
 
+def signal_pills(keys: str) -> str:
+    """HTML-Pills für eine kommagetrennte Liste von Signal-Schlüsseln."""
+    from tt_app import style
+
+    kinds = {"setup": "up", "anomaly": "info", "warning": "down"}
+    out = []
+    for k in [k for k in str(keys).split(",") if k]:
+        name, kind, _ = signals.SIGNALS.get(k, (k, "anomaly", 0))
+        out.append(style.pill(name, kinds[kind]))
+    return "".join(out)
+
+
 def berlin(ts: str) -> str:
     try:
         return pd.Timestamp(ts).tz_convert("Europe/Berlin").strftime("%d.%m.%Y %H:%M")
@@ -226,26 +257,36 @@ def price_chart(df: pd.DataFrame, months: int, stop: float | None = None,
     high_52w = float(df["High"].tail(252).max())
     df = df[df.index >= start]
 
+    from tt_app import style
+
     fig = make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.78, 0.22],
-                        vertical_spacing=0.03)
-    fig.add_trace(go.Candlestick(x=df.index, open=df["Open"], high=df["High"], low=df["Low"],
-                                 close=df["Close"], name="Kurs"), row=1, col=1)
+                        vertical_spacing=0.02)
+    fig.add_trace(go.Candlestick(
+        x=df.index, open=df["Open"], high=df["High"], low=df["Low"], close=df["Close"],
+        name="Kurs", increasing=dict(line=dict(color=style.UP), fillcolor=style.UP),
+        decreasing=dict(line=dict(color=style.DOWN), fillcolor=style.DOWN)), row=1, col=1)
     fig.add_trace(go.Scatter(x=df.index, y=df["SMA50"], name="SMA50",
-                             line=dict(width=1.5, color="#4c9be8")), row=1, col=1)
+                             line=dict(width=1.6, color=style.INFO)), row=1, col=1)
     fig.add_trace(go.Scatter(x=df.index, y=df["SMA200"], name="SMA200",
-                             line=dict(width=1.5, color="#f0a43a")), row=1, col=1)
-    fig.add_hline(y=high_52w, line=dict(color="rgba(150,150,150,0.6)", dash="dot", width=1),
-                  annotation_text="52W-Hoch", annotation_position="top left", row=1, col=1)
+                             line=dict(width=1.6, color=style.WARN)), row=1, col=1)
+    fig.add_hline(y=high_52w, line=dict(color="rgba(139,149,167,0.6)", dash="dot", width=1),
+                  annotation_text="52W-Hoch", annotation_position="top left",
+                  annotation_font_color=style.MUTED, row=1, col=1)
     if stop and not math.isnan(stop):
-        fig.add_hline(y=stop, line=dict(color="rgba(230,80,80,0.8)", dash="dash", width=1),
+        fig.add_hline(y=stop, line=dict(color="rgba(240,80,110,0.8)", dash="dash", width=1),
                       annotation_text="Stopp (2×ATR)", annotation_position="bottom left",
-                      row=1, col=1)
-    colors = ["rgba(38,166,91,0.5)" if c >= o else "rgba(230,80,80,0.5)"
+                      annotation_font_color=style.DOWN, row=1, col=1)
+    colors = ["rgba(38,208,124,0.45)" if c >= o else "rgba(240,80,110,0.45)"
               for o, c in zip(df["Open"], df["Close"])]
     fig.add_trace(go.Bar(x=df.index, y=df["Volume"], name="Volumen", marker_color=colors,
                          showlegend=False), row=2, col=1)
-    fig.update_layout(height=height, xaxis_rangeslider_visible=False, hovermode="x unified",
-                      margin=dict(l=10, r=10, t=10, b=10),
-                      legend=dict(orientation="h", y=1.02, x=0))
-    fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
+    fig.update_layout(
+        height=height, xaxis_rangeslider_visible=False, hovermode="x unified",
+        margin=dict(l=0, r=0, t=8, b=0), paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)", font=dict(color="#c4cbd8", size=12),
+        legend=dict(orientation="h", y=1.04, x=0, bgcolor="rgba(0,0,0,0)"),
+        hoverlabel=dict(bgcolor="#131925", bordercolor=style.BORDER))
+    fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])], gridcolor="#1a2130",
+                     showline=False, zeroline=False)
+    fig.update_yaxes(gridcolor="#1a2130", zeroline=False, side="right")
     return fig
