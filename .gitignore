@@ -1,0 +1,12 @@
+# Daten werden in GitHub Actions per Cache vorgehalten, nicht im Repo
+data/
+
+# results/ wird bewusst committet (liest die Streamlit-App)
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

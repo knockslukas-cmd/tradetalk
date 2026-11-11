@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-11-11T15:35:40+00:00",
+  "sma_short": 50,
+  "sma_long": 200,
+  "indices": [
+    {
+      "symbol": "^GSPC",
+      "name": "S&P 500",
+      "available": true,
+      "date": "2026-11-11",
+      "close": 7589.9599609375,
+      "sma_short": 7672.07662109375,
+      "sma_long": 7334.135212402343,
+      "above_short": false,
+      "above_long": true,
+      "points": 0,
+      "label": "gemischt"
+    },
+    {
+      "symbol": "^IXIC",
+      "name": "Nasdaq Composite",
+      "available": true,
+      "date": "2026-11-11",
+      "close": 25414.861328125,
+      "sma_short": 26395.0349609375,
+      "sma_long": 25122.355556640625,
+      "above_short": false,
+      "above_long": true,
+      "points": 0,
+      "label": "gemischt"
+    },
+    {
+      "symbol": "^GDAXI",
+      "name": "DAX",
+      "available": true,
+      "date": "2026-11-11",
+      "close": 26579.830078125,
+      "sma_short": 25578.149296875,
+      "sma_long": 24952.689873046875,
+      "above_short": true,
+      "above_long": true,
+      "points": 1,
+      "label": "über beiden Linien"
+    }
+  ],
+  "vix": {
+    "value": 18.110000610351562,
+    "points": 1,
+    "label": "ruhig",
+    "date": "2026-11-11"
+  },
+  "points": 2,
+  "verdict": "neutral",
+  "liquid_count": 2860,
+  "universe_count": 6100,
+  "failed_count": 0,
+  "filters": {
+    "min_price": 5,
+    "min_avg_dollar_volume": 5000000,
+    "avg_volume_days": 20,
+    "max_stale_days": 7
+  }
+}

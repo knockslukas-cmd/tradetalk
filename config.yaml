@@ -1,0 +1,66 @@
+# tradetalk – zentrale Konfiguration
+
+paths:
+  universe_dir: data/universe
+  prices_dir: data/prices
+  tickers_csv: data/universe/tickers.csv
+  failed_csv: data/failed.csv
+  liquid_csv: data/universe/liquid.csv
+  results_dir: results   # wird ins Repo committet und von app.py gelesen
+
+# Liquiditätsfilter (Werte in Handelswährung: USD für US-, EUR für DE-Aktien)
+filters:
+  min_price: 5                  # letzter Schlusskurs
+  min_avg_dollar_volume: 5000000  # Ø Tagesumsatz (Kurs x Volumen)
+  avg_volume_days: 20           # Zeitraum für den Durchschnitt
+  max_stale_days: 7             # letzter Kurs höchstens so viele Kalendertage alt
+
+# Marktumfeld
+market_regime:
+  indices:
+    "^GSPC": S&P 500
+    "^IXIC": Nasdaq Composite
+    "^GDAXI": DAX
+  vix: "^VIX"
+  sma_short: 50
+  sma_long: 200
+  vix_calm: 20      # VIX darunter: ruhiger Markt
+  vix_stress: 30    # VIX darüber: Stress
+  tailwind_min: 3   # Punkte ab denen "Rückenwind" gilt
+  headwind_max: -2  # Punkte bis zu denen "Gegenwind" gilt
+
+fetch:
+  years: 3              # Historie beim ersten Download
+  batch_size: 100       # Ticker pro yfinance-Anfrage
+  pause_seconds: 2      # Pause zwischen zwei Batches
+  max_retries: 3        # Versuche pro Batch
+  retry_backoff: 5      # Wartezeit (s) vor Wiederholung, wächst pro Versuch
+
+http:
+  timeout: 30
+  user_agent: "Mozilla/5.0 (compatible; tradetalk/0.1)"
+
+universe:
+  us:
+    nasdaq_listed_url: https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt
+    other_listed_url: https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt
+    # Trennzeichen für Aktienklassen (BRK.B -> BRK-B); "-" passt zu Yahoo Finance
+    class_separator: "-"
+    # zusätzlich Bezugsrechte und Anleihen/ETNs entfernen
+    drop_rights: true
+    drop_debt: true
+
+  de:
+    suffix: ".DE"
+    exchange: XETRA
+    country: DE
+    # Kürzel, die bei onvista anders heißen als bei Yahoo Finance
+    symbol_overrides:
+      A4L: SLYG   # Shelly Group
+    # onvista-Seiten mit den Indexmitgliedern. Eine Seite zeigt höchstens 50
+    # Werte, deshalb lädt das Skript sie zusätzlich mit order=DESC.
+    indices:
+      DAX: https://www.onvista.de/index/einzelwerte/DAX-Index-20735
+      MDAX: https://www.onvista.de/index/einzelwerte/MDAX-Index-323547
+      SDAX: https://www.onvista.de/index/einzelwerte/SDAX-Index-324724
+      TecDAX: https://www.onvista.de/index/einzelwerte/TecDAX-Index-6623216
