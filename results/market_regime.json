@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T21:05:39+00:00",
+  "generated_at": "2026-11-11T23:32:07+00:00",
   "sma_short": 50,
   "sma_long": 200,
   "indices": [
@@ -33,10 +33,10 @@
       "symbol": "^GDAXI",
       "name": "DAX",
       "available": true,
-      "date": "2026-11-11",
-      "close": 26662.76953125,
-      "sma_short": 25579.8080859375,
-      "sma_long": 24953.1045703125,
+      "date": "2026-11-10",
+      "close": 26347.44921875,
+      "sma_short": 25563.339296875,
+      "sma_long": 24942.484775390625,
       "above_short": true,
       "above_long": true,
       "points": 1,
@@ -44,14 +44,14 @@
     }
   ],
   "vix": {
-    "value": 17.559999465942383,
+    "value": 17.489999771118164,
     "points": 1,
     "label": "ruhig",
     "date": "2026-11-11"
   },
   "points": 2,
   "verdict": "neutral",
-  "liquid_count": 2886,
+  "liquid_count": 2889,
   "universe_count": 6100,
   "failed_count": 0,
   "filters": {
@@ -61,13 +61,13 @@
     "max_stale_days": 7
   },
   "breadth": {
-    "above_sma50_pct": 56.65280665280665,
-    "above_sma200_pct": 52.84130284130284,
-    "new_highs": 41,
+    "above_sma50_pct": 56.6632052613361,
+    "above_sma200_pct": 52.924887504326755,
+    "new_highs": 42,
     "new_lows": 13,
-    "advancers": 1731,
-    "decliners": 1128,
-    "setups": 294,
-    "warnings": 112
+    "advancers": 1721,
+    "decliners": 1132,
+    "setups": 302,
+    "warnings": 110
   }
 }
