@@ -926,3 +926,269 @@ date,ticker,name,kind,signals,stars,score,entry,stop,target,currency,country,sou
 2026-11-13,CVI,CVR Energy Inc.,oversold_trend,"Stark gefallen, Trend intakt",1,0.9000,40.1050,33.6498,63.5100,USD,US,live
 2026-11-13,FIVN,"Five9, Inc.",oversold_trend,"Stark gefallen, Trend intakt",1,0.8100,27.3200,22.7909,40.0000,USD,US,live
 2026-11-13,SKM,"SK Telecom Co., Ltd.",reclaim_sma200,"Zurück im langfristigen Aufwärtstrend, Trend dreht nach unten",1,0.6300,34.5700,31.9668,47.1800,USD,US,live
+2026-11-16,CGON,"CG Oncology, Inc.",breakout_52w,"Neues Jahreshoch, Ungewöhnlich viel Handel, Kurssprung nach oben",5,10.2600,86.8500,75.9227,108.7045,USD,US,live
+2026-11-16,PUBM,"PubMatic, Inc.",breakout_52w,Neues Jahreshoch,4,7.7000,21.1500,18.7650,25.9199,USD,US,live
+2026-11-16,PD,"PagerDuty, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.5700,15.9300,14.7618,18.2665,USD,US,live
+2026-11-16,ECO,Okeanis Eco Tankers Corp.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.5600,86.2700,76.7972,105.2157,USD,US,live
+2026-11-16,NIQ,NIQ Global Intelligence plc,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.5100,18.9500,17.2536,22.3429,USD,US,live
+2026-11-16,MTW,"Manitowoc Company, Inc. (The)",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.5000,22.9600,20.4036,28.0729,USD,US,live
+2026-11-16,MRVI,"Maravai LifeSciences Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.4900,7.4850,6.4351,9.5849,USD,US,live
+2026-11-16,AVTR,"Avantor, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.4100,15.5550,14.5342,17.5965,USD,US,live
+2026-11-16,RVTY,"Revvity, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.4000,150.5200,135.5370,180.4860,USD,US,live
+2026-11-16,TENB,"Tenable Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.4000,40.8400,35.2746,53.2200,USD,US,live
+2026-11-16,W,Wayfair Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.3200,109.8150,98.2669,132.9111,USD,US,live
+2026-11-16,SIG,Signet Jewelers Limited,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.2900,108.9100,98.8280,129.2600,USD,US,live
+2026-11-16,EFOR,"Everforth, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.2800,35.4500,31.8932,54.9400,USD,US,live
+2026-11-16,GO,Grocery Outlet Holding Corp.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.2300,12.3900,11.0809,15.0082,USD,US,live
+2026-11-16,CAKE,The Cheesecake Factory Incorporated,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.2000,108.4200,99.0840,127.0921,USD,US,live
+2026-11-16,HURN,Huron Consulting Group Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1900,174.4600,158.8705,205.6389,USD,US,live
+2026-11-16,ASAN,"Asana, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1700,10.0401,8.8927,15.2800,USD,US,live
+2026-11-16,SEPN,"Septerna, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1700,41.6650,35.0758,54.8434,USD,US,live
+2026-11-16,IQV,"IQVIA Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1500,264.2100,246.5555,299.5190,USD,US,live
+2026-11-16,ZBIO,"Zenas BioPharma, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.0800,28.0100,24.5986,44.6000,USD,US,live
+2026-11-16,BRKR,Bruker Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.0600,60.9150,53.5438,75.6574,USD,US,live
+2026-11-16,NSP,"Insperity, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.0600,51.1500,46.0677,61.3147,USD,US,live
+2026-11-16,EPC,Edgewell Personal Care Company,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.0600,27.3550,24.8953,32.2743,USD,US,live
+2026-11-16,FRSH,Freshworks Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.0400,13.3850,12.1107,15.9336,USD,US,live
+2026-11-16,MYGN,"Myriad Genetics, Inc.",golden_cross,Trend dreht nach oben,3,6.0300,5.6000,4.8988,8.0900,USD,US,live
+2026-11-16,MBX,"MBX Biosciences, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.0000,54.5500,47.1556,72.6400,USD,US,live
+2026-11-16,DJCO,Daily Journal Corp. (S.C.),pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.9900,641.2500,592.7713,738.2075,USD,US,live
+2026-11-16,BB,BlackBerry Limited,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.9700,8.8550,7.7107,13.5900,USD,US,live
+2026-11-16,SPSC,"SPS Commerce, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.9600,82.2000,76.3050,96.5400,USD,US,live
+2026-11-16,SLDE,"Slide Insurance Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.9600,25.9950,24.1455,29.6941,USD,US,live
+2026-11-16,JOYY,JOYY Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.9600,80.1000,75.4392,89.4215,USD,US,live
+2026-11-16,PSNL,"Personalis, Inc.",oversold_trend,"Stark gefallen, Trend intakt",3,5.9400,14.9750,14.3305,18.8900,USD,US,live
+2026-11-16,TWFG,"TWFG, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.9400,26.8450,23.9108,32.7133,USD,US,live
+2026-11-16,CMCO,Columbus McKinnon Corporation,golden_cross,Trend dreht nach oben,3,5.9100,20.5950,18.1642,25.4566,USD,US,live
+2026-11-16,IOT,Samsara Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.8900,41.8400,38.2327,49.0547,USD,US,live
+2026-11-16,KD,"Kyndryl Holdings, Inc.",golden_cross,Trend dreht nach oben,3,5.8900,16.5400,14.7801,27.8350,USD,US,live
+2026-11-16,GLBE,Global-E Online Ltd.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.8900,41.4000,38.0283,48.1433,USD,US,live
+2026-11-16,SRZN,"Surrozen, Inc.",golden_cross,Trend dreht nach oben,3,5.8700,32.2200,27.5152,41.6296,USD,US,live
+2026-11-16,AI,"C3.ai, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.8200,11.1800,9.9986,16.4000,USD,US,live
+2026-11-16,TNET,"TriNet Group, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.8100,67.1700,61.3539,78.8023,USD,US,live
+2026-11-16,URBN,"Urban Outfitters, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.7700,83.8900,77.3397,96.9907,USD,US,live
+2026-11-16,MRK,"Merck & Company, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.7500,146.5600,138.4413,162.7974,USD,US,live
+2026-11-16,DLB,Dolby Laboratories,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.7500,60.6900,56.9948,69.9500,USD,US,live
+2026-11-16,AMN,AMN Healthcare Services Inc,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.7500,38.4350,33.8745,49.6200,USD,US,live
+2026-11-16,AMTB,Amerant Bancorp Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.7500,30.0800,28.4270,33.3861,USD,US,live
+2026-11-16,DE,Deere & Company,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.7400,664.1700,626.1281,740.2538,USD,US,live
+2026-11-16,KMTS,"Kestra Medical Technologies, Ltd.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.7300,27.7800,24.0343,35.2713,USD,US,live
+2026-11-16,LION,Lionsgate Studios Corp,golden_cross,Trend dreht nach oben,3,5.7100,14.0950,13.0266,16.7000,USD,US,live
+2026-11-16,GEHC,GE HealthCare Technologies Inc.,golden_cross,Trend dreht nach oben,3,5.6900,83.7750,79.2793,92.7664,USD,US,live
+2026-11-16,OLLI,"Ollie's Bargain Outlet Holdings, Inc.",golden_cross,Trend dreht nach oben,3,5.6900,97.5700,90.1363,126.6300,USD,US,live
+2026-11-16,MATV,"Mativ Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.6900,11.6950,10.5480,15.4800,USD,US,live
+2026-11-16,MSFT,Microsoft Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.6500,522.6750,492.8383,582.3483,USD,US,live
+2026-11-16,RDWR,Radware Ltd.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.6200,31.1000,27.6769,38.5000,USD,US,live
+2026-11-16,ARQT,"Arcutis Biotherapeutics, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.6100,27.3800,23.9915,34.8000,USD,US,live
+2026-11-16,WF,Woori Financial Group Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.6000,72.6050,68.6430,84.7100,USD,US,live
+2026-11-16,ATHM,Autohome Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.6000,21.5700,19.8903,24.9294,USD,US,live
+2026-11-16,BLTE,"Belite Bio, Inc",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.5900,164.7400,148.5956,200.0000,USD,US,live
+2026-11-16,FPE3.DE,Fuchs (Vorzugsaktien),pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.5700,44.1000,42.5685,47.1630,EUR,DE,live
+2026-11-16,GRNT,"Granite Ridge Resources, Inc.",golden_cross,Trend dreht nach oben,3,5.5500,6.2500,5.6338,7.4825,USD,US,live
+2026-11-16,SB,"Safe Bulkers, Inc",pullback_sma50,Rücksetzer im Aufwärtstrend,3,5.5400,8.1900,7.5770,9.4159,USD,US,live
+2026-11-16,AAMI,Acadian Asset Management Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4900,91.6800,84.1289,106.7821,USD,US,live
+2026-11-16,INCY,Incyte Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4800,120.7900,113.2795,135.8111,USD,US,live
+2026-11-16,CTSH,Cognizant Technology Solutions Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4700,63.3950,58.5180,87.0300,USD,US,live
+2026-11-16,PCVX,"Vaxcyte, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4700,62.4200,55.9110,90.7500,USD,US,live
+2026-11-16,CACI,"CACI International, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4600,640.1500,592.2551,735.9398,USD,US,live
+2026-11-16,MITK,"Mitek Systems, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4500,17.5800,15.7612,21.2176,USD,US,live
+2026-11-16,MRX,Marex Group Limited,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4400,71.5750,64.7769,85.1712,USD,US,live
+2026-11-16,RACE,Ferrari N.V.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4300,404.6200,388.0095,437.8410,USD,US,live
+2026-11-16,CWST,"Casella Waste Systems, Inc.",golden_cross,Trend dreht nach oben,2,5.4300,102.0600,94.2581,117.6638,USD,US,live
+2026-11-16,EXPD,"Expeditors International of Washington, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4200,193.7450,183.5930,214.0490,USD,US,live
+2026-11-16,CBK.DE,Commerzbank,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4200,39.6600,37.5285,43.9230,EUR,DE,live
+2026-11-16,MMSI,"Merit Medical Systems, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4100,86.6900,81.3210,97.4280,USD,US,live
+2026-11-16,SMP,"Standard Motor Products, Inc.",golden_cross,Trend dreht nach oben,2,5.4100,43.7450,40.9677,49.2995,USD,US,live
+2026-11-16,ATR,"AptarGroup, Inc.",golden_cross,Trend dreht nach oben,2,5.4000,143.9700,137.2955,157.3190,USD,US,live
+2026-11-16,ERIE,Erie Indemnity Company,golden_cross,Trend dreht nach oben,2,5.4000,277.7100,259.9438,313.2425,USD,US,live
+2026-11-16,RRBI,"Red River Bancshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.4000,104.2400,99.7414,113.2373,USD,US,live
+2026-11-16,WEX,WEX Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3900,184.9900,172.4435,210.0830,USD,US,live
+2026-11-16,FTV,Fortive Corporation,golden_cross,Trend dreht nach oben,2,5.3800,67.9600,64.8899,74.1003,USD,US,live
+2026-11-16,EMR,Emerson Electric Company,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3700,161.6700,151.5087,181.9926,USD,US,live
+2026-11-16,MTX.DE,MTU Aero Engines,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3700,355.0000,331.5689,404.8000,EUR,DE,live
+2026-11-16,MLKN,"MillerKnoll, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3700,20.8850,19.1493,24.7100,USD,US,live
+2026-11-16,GSBC,"Great Southern Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3700,80.8550,77.4885,87.5879,USD,US,live
+2026-11-16,MFG,"Mizuho Financial Group, Inc. Sponosred ADR (Japan)",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3600,10.3300,9.8120,11.4900,USD,US,live
+2026-11-16,OBK,"Origin Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3500,53.8500,50.6173,60.3154,USD,US,live
+2026-11-16,DBX,"Dropbox, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3400,34.5200,32.1529,39.2542,USD,US,live
+2026-11-16,SRCE,1st Source Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3400,87.6500,84.1659,94.6182,USD,US,live
+2026-11-16,NMR,Nomura Holdings Inc ADR,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3300,9.5950,9.1515,10.9400,USD,US,live
+2026-11-16,MG,Mistras Group Inc,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3300,20.2050,19.6935,21.9200,USD,US,live
+2026-11-16,NDSN,Nordson Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3200,322.8600,307.1462,354.2876,USD,US,live
+2026-11-16,SOLV,Solventum Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3100,89.6000,84.1942,100.4116,USD,US,live
+2026-11-16,EVD.DE,CTS Eventim,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.3100,60.7000,56.5799,86.3500,EUR,DE,live
+2026-11-16,CHKP,Check Point Software Technologies Ltd.,golden_cross,Trend dreht nach oben,2,5.3000,149.2368,138.9186,200.2000,USD,US,live
+2026-11-16,GFL,"GFL Environmental Inc. Subordinate voting shares, no par value",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2900,43.0300,40.0280,49.0341,USD,US,live
+2026-11-16,HCI,"HCI Group, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2900,192.5300,182.1408,213.3084,USD,US,live
+2026-11-16,INNV,InnovAge Holding Corp.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2900,9.6450,8.7869,12.6400,USD,US,live
+2026-11-16,PFE,"Pfizer, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2800,29.0250,27.6511,31.7728,USD,US,live
+2026-11-16,PHVS,Pharvaris N.V.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2700,32.9850,29.8692,43.2500,USD,US,live
+2026-11-16,TMP,Tompkins Financial Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2600,99.4100,94.6382,108.9536,USD,US,live
+2026-11-16,MBWM,Mercantile Bank Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2600,60.4200,57.6967,65.8665,USD,US,live
+2026-11-16,COP,ConocoPhillips,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2500,140.6900,132.8300,156.4099,USD,US,live
+2026-11-16,HUBS,"HubSpot, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2500,232.6300,204.4315,406.9400,USD,US,live
+2026-11-16,CUBE,CubeSmart,golden_cross,Trend dreht nach oben,2,5.2500,44.8800,43.1777,48.2846,USD,US,live
+2026-11-16,SENEA,Seneca Foods Corp.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2400,177.6500,161.7549,210.0000,USD,US,live
+2026-11-16,ED,"Consolidated Edison, Inc.",golden_cross,Trend dreht nach oben,2,5.2300,121.7200,117.3098,130.5403,USD,US,live
+2026-11-16,WKC,World Kinect Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2200,35.8300,33.6557,41.2000,USD,US,live
+2026-11-16,LTC,"LTC Properties, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2200,42.9300,40.7950,47.2001,USD,US,live
+2026-11-16,VSTS,Vestis Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2200,13.8300,12.7384,16.9000,USD,US,live
+2026-11-16,MTCH,"Match Group, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2100,41.2500,38.4069,46.9362,USD,US,live
+2026-11-16,CLBK,"Columbia Financial, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.2100,11.0850,10.5875,12.0800,USD,US,live
+2026-11-16,BEI.DE,Beiersdorf,golden_cross,Trend dreht nach oben,2,5.1900,83.4600,79.8231,110.1500,EUR,DE,live
+2026-11-16,MAIN,Main Street Capital Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.1800,56.3600,54.3843,65.2300,USD,US,live
+2026-11-16,PATH,"UiPath, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.1700,13.3650,12.2984,19.8400,USD,US,live
+2026-11-16,FMBH,"First Mid Bancshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.1700,50.7000,48.5361,55.0279,USD,US,live
+2026-11-16,ZIM,ZIM Integrated Shipping Services Ltd.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.1600,29.1590,27.6221,32.2328,USD,US,live
+2026-11-16,ADSK,"Autodesk, Inc.",golden_cross,Trend dreht nach oben,2,5.1500,269.7700,252.7254,320.0000,USD,US,live
+2026-11-16,EPAC,Enerpac Tool Group Corp.,golden_cross,Trend dreht nach oben,2,5.1400,39.5100,36.5662,45.3977,USD,US,live
+2026-11-16,OSBC,"Old Second Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.1300,25.0350,23.8723,27.3604,USD,US,live
+2026-11-16,WASH,"Washington Trust Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.1300,38.3500,36.4953,42.0593,USD,US,live
+2026-11-16,CVX,Chevron Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0900,217.5647,207.7640,237.1662,USD,US,live
+2026-11-16,GRMN,Garmin Ltd.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0900,281.6100,263.2613,318.3073,USD,US,live
+2026-11-16,KNTK,Kinetik Holdings Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0900,55.0800,51.1312,62.9775,USD,US,live
+2026-11-16,WLY,"John Wiley & Sons, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0900,50.5300,47.3684,57.4499,USD,US,live
+2026-11-16,GM,General Motors Company,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0800,84.1400,78.6922,95.0356,USD,US,live
+2026-11-16,STBA,"S&T Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0800,50.6150,48.2949,55.2553,USD,US,live
+2026-11-16,RWE.DE,RWE,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0700,59.2600,56.5905,64.5991,EUR,DE,live
+2026-11-16,TEL,TE Connectivity plc,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0600,214.4450,199.7162,252.5600,USD,US,live
+2026-11-16,FNV,Franco-Nevada Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0500,243.7900,226.5670,285.6700,USD,US,live
+2026-11-16,SHEL,Shell PLC,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0400,98.0355,94.3228,109.3700,USD,US,live
+2026-11-16,BAP,Credicorp Ltd.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0400,367.6850,343.4153,416.2245,USD,US,live
+2026-11-16,OUT,OUTFRONT Media Inc.,golden_cross,Trend dreht nach oben,2,5.0300,33.8000,31.8291,37.7417,USD,US,live
+2026-11-16,BHRB,Burke & Herbert Financial Services Corp.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0300,71.0400,67.7009,77.7182,USD,US,live
+2026-11-16,BMY,Bristol-Myers Squibb Company,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0100,63.3250,59.7510,70.4730,USD,US,live
+2026-11-16,WTS,"Watts Water Technologies, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0100,356.9500,334.6052,401.6397,USD,US,live
+2026-11-16,SFNC,Simmons First National Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0100,23.2800,22.1669,25.5061,USD,US,live
+2026-11-16,THFF,First Financial Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,5.0000,76.4600,73.1840,84.1700,USD,US,live
+2026-11-16,TD,Toronto Dominion Bank (The),pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9900,122.3100,118.2055,130.5190,USD,US,live
+2026-11-16,AMCR,Amcor plc,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9800,44.0750,41.6000,50.9400,USD,US,live
+2026-11-16,LNC,Lincoln National Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9800,41.5500,39.0046,47.6700,USD,US,live
+2026-11-16,CPA,"Copa Holdings, S.A.",golden_cross,Trend dreht nach oben,2,4.9800,138.4500,127.9903,160.4700,USD,US,live
+2026-11-16,UBSI,"United Bankshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9800,47.8900,46.0555,51.5591,USD,US,live
+2026-11-16,LSPD,Lightspeed Commerce Inc. Subordinate Voting Shares,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9800,10.3150,9.5331,12.6850,USD,US,live
+2026-11-16,TKNO,"Alpha Teknova, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9800,7.9550,6.6405,10.5840,USD,US,live
+2026-11-16,MFC,Manulife Financial Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9700,43.7101,42.0865,46.9573,USD,US,live
+2026-11-16,HAFC,Hanmi Financial Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9600,32.2400,30.8771,34.9658,USD,US,live
+2026-11-16,MSGE,Madison Square Garden Entertainment Corp.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9500,78.9650,73.4780,90.4100,USD,US,live
+2026-11-16,WFC,Wells Fargo & Company,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9400,85.0300,81.2564,97.7600,USD,US,live
+2026-11-16,CVBF,CVB Financial Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9400,22.3650,21.4657,24.1636,USD,US,live
+2026-11-16,FCF,First Commonwealth Financial Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9400,20.8000,19.8944,22.6113,USD,US,live
+2026-11-16,RL,Ralph Lauren Corporation,golden_cross,Trend dreht nach oben,2,4.9200,389.4250,365.6243,437.0264,USD,US,live
+2026-11-16,GABC,"German American Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9200,49.4400,47.3461,53.6278,USD,US,live
+2026-11-16,SSNC,"SS&C Technologies Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9100,79.7500,76.2197,89.9300,USD,US,live
+2026-11-16,PFG,Principal Financial Group Inc,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.9100,112.4500,106.9098,123.5304,USD,US,live
+2026-11-16,AIN,Albany International Corporation,golden_cross,Trend dreht nach oben,2,4.9000,67.2000,61.5986,78.4028,USD,US,live
+2026-11-16,KFY,Korn Ferry,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8900,76.5150,72.4742,87.5100,USD,US,live
+2026-11-16,SHBI,"Shore Bancshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8800,22.4700,21.1708,25.0684,USD,US,live
+2026-11-16,JMSB,"John Marshall Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8800,23.1000,22.1608,24.9784,USD,US,live
+2026-11-16,HSIC,"Henry Schein, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8700,84.7950,79.7306,94.9238,USD,US,live
+2026-11-16,EQBK,"Equity Bancshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8700,49.0300,46.9401,53.2099,USD,US,live
+2026-11-16,CFR,"Cullen/Frost Bankers, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8600,157.5400,150.8390,170.9419,USD,US,live
+2026-11-16,KWR,Quaker Houghton,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8500,153.8400,143.9433,183.0100,USD,US,live
+2026-11-16,CHCO,City Holding Company,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8400,141.0950,135.8093,151.6664,USD,US,live
+2026-11-16,JPM,JP Morgan Chase & Co.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8300,341.9900,328.0760,369.8180,USD,US,live
+2026-11-16,NUE,Nucor Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8300,253.8750,234.4521,292.7207,USD,US,live
+2026-11-16,REXR,"Rexford Industrial Realty, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8200,37.5000,35.7195,42.4100,USD,US,live
+2026-11-16,SSB,SouthState Bank Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8200,104.1800,99.9448,112.6503,USD,US,live
+2026-11-16,OTEX,Open Text Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8200,25.0200,23.5317,34.1700,USD,US,live
+2026-11-16,PEBO,Peoples Bancorp Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8200,38.0700,36.4734,42.2900,USD,US,live
+2026-11-16,ASC,Ardmore Shipping Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8200,18.9800,17.1255,22.6889,USD,US,live
+2026-11-16,AMT,American Tower Corporation (REIT),golden_cross,Trend dreht nach oben,2,4.8100,190.8059,181.2658,209.8860,USD,US,live
+2026-11-16,TRGP,"Targa Resources, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8100,292.7150,272.8000,332.5451,USD,US,live
+2026-11-16,ITT,ITT Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8100,207.7900,192.5113,238.3474,USD,US,live
+2026-11-16,FSUN,FirstSun Capital Bancorp,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.8100,38.6450,36.7589,42.4172,USD,US,live
+2026-11-16,PM,Philip Morris International Inc,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7900,196.3600,185.9917,217.0966,USD,US,live
+2026-11-16,CTS,CTS Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7900,58.8400,54.4582,69.5500,USD,US,live
+2026-11-16,EAF,GrafTech International Ltd.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7900,9.3500,7.2758,19.7200,USD,US,live
+2026-11-16,HIFS,Hingham Institution for Savings,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7800,294.5700,276.2864,338.0000,USD,US,live
+2026-11-16,WSBC,"WesBanco, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7600,38.3100,36.5927,43.0200,USD,US,live
+2026-11-16,IBCP,Independent Bank Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7600,36.3700,34.6716,39.7669,USD,US,live
+2026-11-16,FFBC,First Financial Bancorp.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7500,32.2900,31.0096,36.2500,USD,US,live
+2026-11-16,TOWN,Towne Bank,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7300,36.4500,35.0071,39.3357,USD,US,live
+2026-11-16,OFG,OFG Bancorp,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7300,50.7600,48.4283,55.4235,USD,US,live
+2026-11-16,FDUS,Fidus Investment Corporation - Closed End Fund,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7300,19.3000,18.6001,20.7800,USD,US,live
+2026-11-16,UGI,UGI Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7200,37.6899,36.3478,41.3400,USD,US,live
+2026-11-16,VVX,"V2X, Inc.",golden_cross,Trend dreht nach oben,2,4.7200,79.7450,73.3381,93.9800,USD,US,live
+2026-11-16,SBCF,Seacoast Banking Corporation of Florida,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7200,33.3200,31.7932,36.3736,USD,US,live
+2026-11-16,NWBI,"Northwest Bancshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7200,14.9900,14.3775,16.2151,USD,US,live
+2026-11-16,SYBT,"Stock Yards Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7200,78.1200,74.4688,89.2200,USD,US,live
+2026-11-16,BMO,Bank Of Montreal,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.7100,170.9700,164.7375,187.2200,USD,US,live
+2026-11-16,ZION,Zions Bancorporation N.A.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6900,65.7350,62.9514,73.3400,USD,US,live
+2026-11-16,VIRT,"Virtu Financial, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6900,58.2200,53.8403,68.7600,USD,US,live
+2026-11-16,WABC,Westamerica Bancorporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6700,58.7501,56.0255,64.1994,USD,US,live
+2026-11-16,EWBC,"East West Bancorp, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6600,129.6400,124.1445,140.6311,USD,US,live
+2026-11-16,VNO,Vornado Realty Trust,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6600,34.6100,32.4612,41.6000,USD,US,live
+2026-11-16,HTO,H2O America,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6500,59.8900,56.6516,67.0900,USD,US,live
+2026-11-16,BH-A,Biglari Holdings Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6500,1811.0000,1598.2820,2513.0000,USD,US,live
+2026-11-16,TEAM,Atlassian Corporation,oversold_trend,"Stark gefallen, Trend intakt",2,4.6400,150.3900,130.4084,229.9600,USD,US,live
+2026-11-16,AR,Antero Resources Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6400,38.0600,35.3411,45.7500,USD,US,live
+2026-11-16,RY,Royal Bank Of Canada,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6300,200.7500,194.3049,218.5700,USD,US,live
+2026-11-16,WRBY,Warby Parker Inc.,golden_cross,Trend dreht nach oben,2,4.6300,27.0300,22.7725,35.5450,USD,US,live
+2026-11-16,ARCC,Ares Capital Corporation - Closed End Fund,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6300,19.1250,18.4673,21.1400,USD,US,live
+2026-11-16,AMP,"Ameriprise Financial, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6200,515.1800,488.5945,572.5600,USD,US,live
+2026-11-16,DNTH,"Dianthus Therapeutics, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.6000,89.4000,80.3510,117.8800,USD,US,live
+2026-11-16,BETA,"Beta Technologies, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.4700,22.1069,18.3968,32.8000,USD,US,live
+2026-11-16,CKX,"CKX Lands, Inc.",golden_cross,Trend dreht nach oben,2,4.3800,14.8000,11.7174,24.7400,USD,US,live
+2026-11-16,COLM,Columbia Sportswear Company,golden_cross,Trend dreht nach oben,2,4.3400,75.2200,70.8451,83.9698,USD,US,live
+2026-11-16,NTRA,"Natera, Inc.",oversold_trend,"Stark gefallen, Trend intakt",2,4.3100,293.2300,249.3872,437.4080,USD,US,live
+2026-11-16,HALO,"Halozyme Therapeutics, Inc.",oversold_trend,"Stark gefallen, Trend intakt",2,4.1600,98.2950,89.6414,134.0000,USD,US,live
+2026-11-16,CTEV,Claritev Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.1400,25.7950,20.6926,55.5000,USD,US,live
+2026-11-16,SIE.DE,Siemens,pullback_sma50,Rücksetzer im Aufwärtstrend,2,4.0500,272.5500,256.0677,305.5146,EUR,DE,live
+2026-11-16,P911.DE,Porsche AG Vz.,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.9000,44.1000,41.7289,50.6600,EUR,DE,live
+2026-11-16,SFST,"Southern First Bancshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.8400,60.1750,57.2003,66.1245,USD,US,live
+2026-11-16,PAR,PAR Technology Corporation,golden_cross,Trend dreht nach oben,1,3.7000,23.7750,21.5944,40.5400,USD,US,live
+2026-11-16,FSBC,Five Star Bancorp,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.6700,43.8100,41.6161,50.2600,USD,US,live
+2026-11-16,KELYA,"Kelly Services, Inc.",oversold_trend,"Stark gefallen, Trend intakt",1,3.6700,13.4500,12.0908,17.7500,USD,US,live
+2026-11-16,TXNM,"TXNM Energy, Inc.",pullback_sma50,"Rücksetzer im Aufwärtstrend, Trend dreht nach oben",1,3.6500,58.8600,58.1662,60.2477,USD,US,live
+2026-11-16,XOM,ExxonMobil Holdings Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.6100,167.5700,159.0914,188.5000,USD,US,live
+2026-11-16,OVV,Ovintiv Inc. (DE),pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.6100,64.6200,60.3271,73.6200,USD,US,live
+2026-11-16,DOC,"Healthpeak Properties, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.6100,19.7200,18.7805,22.9500,USD,US,live
+2026-11-16,CF,"CF Industries Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.6000,121.7300,112.7343,141.9600,USD,US,live
+2026-11-16,NSC,Norfolk Southern Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.5900,327.6000,313.7636,358.6000,USD,US,live
+2026-11-16,BANR,Banner Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.5900,68.4500,65.3786,74.8400,USD,US,live
+2026-11-16,BFC,Bank First Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.5900,147.3650,139.9907,162.1136,USD,US,live
+2026-11-16,SNPS,"Synopsys, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.5700,443.5000,407.5480,539.4800,USD,US,live
+2026-11-16,CHRD,Chord Energy Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.5700,148.0200,136.9930,170.0740,USD,US,live
+2026-11-16,E,ENI S.p.A.,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.5600,56.8350,54.5591,62.1600,USD,US,live
+2026-11-16,EFSC,Enterprise Financial Services Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.5400,61.4150,58.9579,68.7300,USD,US,live
+2026-11-16,ARMK,Aramark,pullback_sma50,"Rücksetzer im Aufwärtstrend, Kurssprung nach unten",1,3.5300,54.5850,50.9357,62.6500,USD,US,live
+2026-11-16,HTB,"HomeTrust Bancshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.5200,46.6700,44.7277,52.5000,USD,US,live
+2026-11-16,LOGI,Logitech International S.A. - Registered Shares,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4900,100.2900,93.5588,129.6600,USD,US,live
+2026-11-16,BATRK,"Atlanta Braves Holdings, Inc. - Series C",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4900,50.5100,47.9068,55.7164,USD,US,live
+2026-11-16,PAYO,Payoneer Global Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4900,7.1700,7.1086,7.2928,USD,US,live
+2026-11-16,TTE,TotalEnergies SE,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4800,90.2371,86.8099,97.0914,USD,US,live
+2026-11-16,ESS,"Essex Property Trust, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4700,273.3000,262.1580,303.3500,USD,US,live
+2026-11-16,CBSH,"Commerce Bancshares, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4600,55.3900,53.3746,60.9200,USD,US,live
+2026-11-16,CM,Canadian Imperial Bank of Commerce,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4500,114.5750,110.1894,124.8600,USD,US,live
+2026-11-16,ONB,Old National Bancorp,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4400,24.8033,23.6914,27.3600,USD,US,live
+2026-11-16,UBS,UBS Group AG Registered,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4200,47.9951,45.9468,55.9850,USD,US,live
+2026-11-16,TFSL,TFS Financial Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4200,16.2500,15.6422,19.4900,USD,US,live
+2026-11-16,PSTL,"Postal Realty Trust, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.4000,22.2400,21.1443,25.2200,USD,US,live
+2026-11-16,ESNT,Essent Group Ltd.,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.3900,64.7500,61.1489,71.9523,USD,US,live
+2026-11-16,GRND,Grindr Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.3900,14.3000,12.9445,18.5000,USD,US,live
+2026-11-16,VREX,Varex Imaging Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.3800,18.2150,18.0287,18.6300,USD,US,live
+2026-11-16,AEG,Aegon Ltd. New York Registry Shares,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.3600,8.5550,8.2773,9.6100,USD,US,live
+2026-11-16,NP,Neptune Insurance Holdings Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.3600,28.8850,26.6061,35.1500,USD,US,live
+2026-11-16,UMBF,UMB Financial Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.3400,132.7700,125.0748,153.3200,USD,US,live
+2026-11-16,GWRE,"Guidewire Software, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.2800,156.7300,142.5078,229.8500,USD,US,live
+2026-11-16,TECH,Bio-Techne Corp,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.2600,72.7950,72.5455,73.2939,USD,US,live
+2026-11-16,BPOP,"Popular, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.2600,156.1000,149.8035,179.2400,USD,US,live
+2026-11-16,IART,Integra LifeSciences Holdings Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.1900,14.4400,12.8666,20.4900,USD,US,live
+2026-11-16,HAG.DE,Hensoldt,pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.1500,81.0600,73.2967,96.7000,EUR,DE,live
+2026-11-16,BWIN,"The Baldwin Insurance Group, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,3.0500,32.0750,31.7324,32.7602,USD,US,live
+2026-11-16,RDAC,Rising Dragon Acquisition Corp.,golden_cross,Trend dreht nach oben,1,2.9900,11.1100,10.0966,23.9900,USD,US,live
+2026-11-16,VNT,Vontier Corporation,golden_cross,Trend dreht nach oben,1,2.9700,43.9150,41.2633,49.2184,USD,US,live
+2026-11-16,DV,"DoubleVerify Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,2.8600,13.5650,13.4955,13.7040,USD,US,live
+2026-11-16,DSGR,"Distribution Solutions Group, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,2.5400,35.0400,34.8285,35.4631,USD,US,live
+2026-11-16,NTNX,"Nutanix, Inc.",oversold_trend,"Stark gefallen, Trend intakt",1,2.5300,58.9650,54.0831,75.9800,USD,US,live
+2026-11-16,HSTM,"HealthStream, Inc.",oversold_trend,"Stark gefallen, Trend intakt",1,2.4000,27.5000,24.9775,35.6100,USD,US,live
+2026-11-16,BOW,Bowhead Specialty Holdings Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,1,2.2100,34.1100,33.6066,35.1168,USD,US,live
+2026-11-16,BOSS.DE,Hugo Boss,pullback_sma50,Rücksetzer im Aufwärtstrend,1,2.0600,38.3700,37.7890,40.5200,EUR,DE,live
+2026-11-16,DHER.DE,Delivery Hero,pullback_sma50,Rücksetzer im Aufwärtstrend,1,1.9700,36.8000,36.1389,39.8300,EUR,DE,live
+2026-11-16,CZR,"Caesars Entertainment, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,1.7800,29.3200,28.9204,30.8800,USD,US,live
+2026-11-16,SLAB,"Silicon Laboratories, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,1,1.7700,221.4550,219.5646,225.2358,USD,US,live
+2026-11-16,AES,The AES Corporation,pullback_sma50,Rücksetzer im Aufwärtstrend,1,1.7500,14.9300,14.8239,17.6500,USD,US,live
+2026-11-16,FIVN,"Five9, Inc.",oversold_trend,"Stark gefallen, Trend intakt",1,0.6900,26.7200,22.3781,40.0000,USD,US,live
+2026-11-16,CVI,CVR Energy Inc.,oversold_trend,"Stark gefallen, Trend intakt",1,0.6300,38.3900,32.0317,63.5100,USD,US,live
+2026-11-16,PAYS,"Paysign, Inc.",oversold_trend,"Stark gefallen, Trend intakt",1,0.5600,9.2650,7.2562,16.1500,USD,US,live
