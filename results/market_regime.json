@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T17:51:32+00:00",
+  "generated_at": "2026-11-17T23:31:40+00:00",
   "sma_short": 50,
   "sma_long": 200,
   "indices": [
@@ -8,9 +8,9 @@
       "name": "S&P 500",
       "available": true,
       "date": "2026-11-17",
-      "close": 7333.33984375,
-      "sma_short": 7654.61640625,
-      "sma_long": 7344.489763183594,
+      "close": 7340.52978515625,
+      "sma_short": 7654.760205078125,
+      "sma_long": 7344.525712890625,
       "above_short": false,
       "above_long": false,
       "points": -1,
@@ -21,9 +21,9 @@
       "name": "Nasdaq Composite",
       "available": true,
       "date": "2026-11-17",
-      "close": 24236.02734375,
-      "sma_short": 26266.4186328125,
-      "sma_long": 25145.870439453123,
+      "close": 24328.3828125,
+      "sma_short": 26268.2657421875,
+      "sma_long": 25146.332216796876,
       "above_short": false,
       "above_long": false,
       "points": -1,
@@ -33,10 +33,10 @@
       "symbol": "^GDAXI",
       "name": "DAX",
       "available": true,
-      "date": "2026-11-17",
-      "close": 26045.369140625,
-      "sma_short": 25621.847265625,
-      "sma_long": 24990.571728515624,
+      "date": "2026-11-16",
+      "close": 26598.640625,
+      "sma_short": 25621.0925,
+      "sma_long": 24982.800185546876,
       "above_short": true,
       "above_long": true,
       "points": 1,
@@ -44,14 +44,14 @@
     }
   ],
   "vix": {
-    "value": 25.3700008392334,
+    "value": 25.459999084472656,
     "points": 0,
     "label": "erhöht",
     "date": "2026-11-17"
   },
   "points": -1,
   "verdict": "neutral",
-  "liquid_count": 2806,
+  "liquid_count": 2826,
   "universe_count": 6099,
   "failed_count": 0,
   "filters": {
@@ -61,13 +61,13 @@
     "max_stale_days": 7
   },
   "breadth": {
-    "above_sma50_pct": 45.54526015680685,
-    "above_sma200_pct": 46.756949394155384,
+    "above_sma50_pct": 42.569002123142255,
+    "above_sma200_pct": 45.36447275300778,
     "new_highs": 5,
-    "new_lows": 94,
-    "advancers": 743,
-    "decliners": 2051,
-    "setups": 297,
-    "warnings": 203
+    "new_lows": 120,
+    "advancers": 534,
+    "decliners": 2277,
+    "setups": 299,
+    "warnings": 244
   }
 }
