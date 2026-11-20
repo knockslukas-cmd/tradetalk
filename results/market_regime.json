@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T23:25:20+00:00",
+  "generated_at": "2026-11-20T17:49:13+00:00",
   "sma_short": 50,
   "sma_long": 200,
   "indices": [
@@ -7,10 +7,10 @@
       "symbol": "^GSPC",
       "name": "S&P 500",
       "available": true,
-      "date": "2026-11-19",
-      "close": 7175.830078125,
-      "sma_short": 7640.188203125,
-      "sma_long": 7348.020361328125,
+      "date": "2026-11-20",
+      "close": 7010.85009765625,
+      "sma_short": 7627.26560546875,
+      "sma_long": 7349.082612304687,
       "above_short": false,
       "above_long": false,
       "points": -1,
@@ -20,10 +20,10 @@
       "symbol": "^IXIC",
       "name": "Nasdaq Composite",
       "available": true,
-      "date": "2026-11-19",
-      "close": 23879.19921875,
-      "sma_short": 26187.74609375,
-      "sma_long": 25157.078759765624,
+      "date": "2026-11-20",
+      "close": 22987.8203125,
+      "sma_short": 26120.84171875,
+      "sma_long": 25159.314912109374,
       "above_short": false,
       "above_long": false,
       "points": -1,
@@ -33,26 +33,26 @@
       "symbol": "^GDAXI",
       "name": "DAX",
       "available": true,
-      "date": "2026-11-18",
-      "close": 25736.240234375,
-      "sma_short": 25625.0430859375,
-      "sma_long": 24995.645625,
-      "above_short": true,
-      "above_long": true,
-      "points": 1,
-      "label": "über beiden Linien"
+      "date": "2026-11-20",
+      "close": 24802.779296875,
+      "sma_short": 25611.7806640625,
+      "sma_long": 24996.96498046875,
+      "above_short": false,
+      "above_long": false,
+      "points": -1,
+      "label": "unter der 200-Tage-Linie"
     }
   ],
   "vix": {
-    "value": 28.440000534057617,
-    "points": 0,
-    "label": "erhöht",
-    "date": "2026-11-19"
+    "value": 31.780000686645508,
+    "points": -1,
+    "label": "Stress",
+    "date": "2026-11-20"
   },
-  "points": -1,
-  "verdict": "neutral",
-  "liquid_count": 2821,
-  "universe_count": 6097,
+  "points": -4,
+  "verdict": "Gegenwind",
+  "liquid_count": 2796,
+  "universe_count": 6095,
   "failed_count": 0,
   "filters": {
     "min_price": 5,
@@ -61,13 +61,13 @@
     "max_stale_days": 7
   },
   "breadth": {
-    "above_sma50_pct": 36.15739099610067,
-    "above_sma200_pct": 40.55299539170507,
-    "new_highs": 0,
-    "new_lows": 147,
-    "advancers": 331,
-    "decliners": 2475,
-    "setups": 284,
-    "warnings": 311
+    "above_sma50_pct": 33.261802575107296,
+    "above_sma200_pct": 38.55507868383405,
+    "new_highs": 5,
+    "new_lows": 214,
+    "advancers": 778,
+    "decliners": 2009,
+    "setups": 240,
+    "warnings": 284
   }
 }
