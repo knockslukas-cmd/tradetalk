@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T23:31:23+00:00",
+  "generated_at": "2026-11-24T17:43:19+00:00",
   "sma_short": 50,
   "sma_long": 200,
   "indices": [
@@ -7,10 +7,10 @@
       "symbol": "^GSPC",
       "name": "S&P 500",
       "available": true,
-      "date": "2026-11-23",
-      "close": 7237.169921875,
-      "sma_short": 7617.600205078125,
-      "sma_long": 7350.104663085937,
+      "date": "2026-11-24",
+      "close": 7215.72998046875,
+      "sma_short": 7610.200205078125,
+      "sma_long": 7351.3592138671875,
       "above_short": false,
       "above_long": false,
       "points": -1,
@@ -20,10 +20,10 @@
       "symbol": "^IXIC",
       "name": "Nasdaq Composite",
       "available": true,
-      "date": "2026-11-23",
-      "close": 24089.55859375,
-      "sma_short": 26071.502890625,
-      "sma_long": 25162.756201171876,
+      "date": "2026-11-24",
+      "close": 23782.74609375,
+      "sma_short": 26027.5264453125,
+      "sma_long": 25165.476591796876,
       "above_short": false,
       "above_long": false,
       "points": -1,
@@ -33,25 +33,25 @@
       "symbol": "^GDAXI",
       "name": "DAX",
       "available": true,
-      "date": "2026-11-20",
-      "close": 24802.779296875,
-      "sma_short": 25611.7806640625,
-      "sma_long": 24996.96498046875,
+      "date": "2026-11-24",
+      "close": 25017.810546875,
+      "sma_short": 25602.02046875,
+      "sma_long": 25000.196181640626,
       "above_short": false,
-      "above_long": false,
-      "points": -1,
-      "label": "unter der 200-Tage-Linie"
+      "above_long": true,
+      "points": 0,
+      "label": "gemischt"
     }
   ],
   "vix": {
-    "value": 26.6200008392334,
+    "value": 26.940000534057617,
     "points": 0,
     "label": "erhöht",
-    "date": "2026-11-23"
+    "date": "2026-11-24"
   },
-  "points": -3,
+  "points": -2,
   "verdict": "Gegenwind",
-  "liquid_count": 2827,
+  "liquid_count": 2813,
   "universe_count": 6095,
   "failed_count": 0,
   "filters": {
@@ -61,13 +61,13 @@
     "max_stale_days": 7
   },
   "breadth": {
-    "above_sma50_pct": 38.026176158471884,
-    "above_sma200_pct": 41.49274849663955,
-    "new_highs": 15,
-    "new_lows": 22,
-    "advancers": 2482,
-    "decliners": 336,
-    "setups": 325,
-    "warnings": 203
+    "above_sma50_pct": 42.01919658727337,
+    "above_sma200_pct": 42.87237824386776,
+    "new_highs": 41,
+    "new_lows": 18,
+    "advancers": 1834,
+    "decliners": 968,
+    "setups": 291,
+    "warnings": 122
   }
 }
