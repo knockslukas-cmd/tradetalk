@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T17:45:07+00:00",
+  "generated_at": "2026-11-26T23:34:17+00:00",
   "sma_short": 50,
   "sma_long": 200,
   "indices": [
@@ -33,14 +33,14 @@
       "symbol": "^GDAXI",
       "name": "DAX",
       "available": true,
-      "date": "2026-11-26",
-      "close": 25215.51953125,
-      "sma_short": 25575.2842578125,
-      "sma_long": 25001.205478515625,
+      "date": "2026-11-25",
+      "close": 24702.130859375,
+      "sma_short": 25585.3080859375,
+      "sma_long": 24999.132431640624,
       "above_short": false,
-      "above_long": true,
-      "points": 0,
-      "label": "gemischt"
+      "above_long": false,
+      "points": -1,
+      "label": "unter der 200-Tage-Linie"
     }
   ],
   "vix": {
@@ -49,7 +49,7 @@
     "label": "erhöht",
     "date": "2026-11-26"
   },
-  "points": -2,
+  "points": -3,
   "verdict": "Gegenwind",
   "liquid_count": 2829,
   "universe_count": 6094,

@@ -3635,7 +3635,7 @@ date,ticker,name,kind,signals,stars,score,entry,stop,target,currency,country,sou
 2026-11-25,DHER.DE,Delivery Hero,pullback_sma50,Rücksetzer im Aufwärtstrend,1,1.8100,36.5800,35.8954,39.8300,EUR,DE,live
 2026-11-25,IOVA,"Iovance Biotherapeutics, Inc.",oversold_trend,"Stark gefallen, Trend intakt",1,0.9900,6.8300,5.3188,15.3700,USD,US,live
 2026-11-26,EMBC,Embecta Corp.,golden_cross,"Trend dreht nach oben, Zurück im langfristigen Aufwärtstrend",4,8.3800,7.9200,6.8057,14.7800,USD,US,live
-2026-11-26,HPQ,HP Inc.,pullback_sma50,"Rücksetzer im Aufwärtstrend, Ungewöhnlich viel Handel, Kurssprung nach oben",4,8.3200,31.1500,28.2797,36.8906,USD,US,live
+2026-11-26,HPQ,HP Inc.,pullback_sma50,"Rücksetzer im Aufwärtstrend, Ungewöhnlich viel Handel, Kurssprung nach oben",4,8.3300,31.1500,28.2797,36.8906,USD,US,live
 2026-11-26,GRDN,"Guardian Pharmacy Services, Inc.",breakout_52w,Neues Jahreshoch,4,8.0200,52.1100,47.7900,60.7500,USD,US,live
 2026-11-26,KSS,Kohl's Corporation,breakout_52w,Neues Jahreshoch,4,8.0100,26.7000,23.6562,32.7877,USD,US,live
 2026-11-26,CNH,CNH Industrial N.V.,pullback_sma50,"Rücksetzer im Aufwärtstrend, Zurück im langfristigen Aufwärtstrend",4,7.7500,11.8800,10.6753,14.4600,USD,US,live
@@ -3697,7 +3697,7 @@ date,ticker,name,kind,signals,stars,score,entry,stop,target,currency,country,sou
 2026-11-26,BJ,"BJ's Wholesale Club Holdings, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1800,101.7000,95.2869,114.5263,USD,US,live
 2026-11-26,MANE,"Veradermics, Incorporated",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1800,126.0400,108.6069,160.9062,USD,US,live
 2026-11-26,PTLO,Portillo's Inc.,golden_cross,Trend dreht nach oben,3,6.1800,6.1700,5.4440,7.6220,USD,US,live
-2026-11-26,HMC,"Honda Motor Company, Ltd.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1600,33.6600,32.0825,36.8800,USD,US,live
+2026-11-26,HMC,"Honda Motor Company, Ltd.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1700,33.6600,32.0825,36.8800,USD,US,live
 2026-11-26,UFPT,"UFP Technologies, Inc.",pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1500,305.0200,277.1410,360.7780,USD,US,live
 2026-11-26,AMTM,"Amentum Holdings, Inc.",reclaim_sma200,Zurück im langfristigen Aufwärtstrend,3,6.1300,24.8600,22.5527,38.1100,USD,US,live
 2026-11-26,HUM,Humana Inc.,pullback_sma50,Rücksetzer im Aufwärtstrend,3,6.1200,406.5100,363.8997,491.7306,USD,US,live
