@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T23:32:14+00:00",
+  "generated_at": "2026-11-26T17:45:07+00:00",
   "sma_short": 50,
   "sma_long": 200,
   "indices": [
@@ -21,9 +21,9 @@
       "name": "Nasdaq Composite",
       "available": true,
       "date": "2026-11-25",
-      "close": 23585.802734375,
-      "sma_short": 25978.689765625,
-      "sma_long": 25167.647216796875,
+      "close": 23585.80078125,
+      "sma_short": 25978.6897265625,
+      "sma_long": 25167.64720703125,
       "above_short": false,
       "above_long": false,
       "points": -1,
@@ -33,10 +33,10 @@
       "symbol": "^GDAXI",
       "name": "DAX",
       "available": true,
-      "date": "2026-11-24",
-      "close": 25017.810546875,
-      "sma_short": 25602.02046875,
-      "sma_long": 25000.196181640626,
+      "date": "2026-11-26",
+      "close": 25215.51953125,
+      "sma_short": 25575.2842578125,
+      "sma_long": 25001.205478515625,
       "above_short": false,
       "above_long": true,
       "points": 0,
@@ -44,14 +44,14 @@
     }
   ],
   "vix": {
-    "value": 28.290000915527344,
+    "value": 26.799999237060547,
     "points": 0,
     "label": "erhöht",
-    "date": "2026-11-25"
+    "date": "2026-11-26"
   },
   "points": -2,
   "verdict": "Gegenwind",
-  "liquid_count": 2830,
+  "liquid_count": 2829,
   "universe_count": 6094,
   "failed_count": 0,
   "filters": {
@@ -61,13 +61,13 @@
     "max_stale_days": 7
   },
   "breadth": {
-    "above_sma50_pct": 43.99293286219081,
-    "above_sma200_pct": 44.13427561837456,
+    "above_sma50_pct": 44.29126899964652,
+    "above_sma200_pct": 44.25592082007776,
     "new_highs": 27,
-    "new_lows": 13,
-    "advancers": 1981,
-    "decliners": 826,
-    "setups": 318,
-    "warnings": 84
+    "new_lows": 11,
+    "advancers": 2027,
+    "decliners": 778,
+    "setups": 321,
+    "warnings": 86
   }
 }
